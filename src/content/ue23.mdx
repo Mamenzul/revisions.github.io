@@ -1,0 +1,855 @@
+---
+title: "UE23 — Gérontologie & PTG"
+color: "c1"
+coursNav:
+  - { id: "1a", label: "Définitions & Épidémio" }
+  - { id: "1b", label: "Vieillissement" }
+  - { id: "1c", label: "Fragilité" }
+  - { id: "1d", label: "Chute" }
+  - { id: "1e", label: "Syndromes gériatriques" }
+  - { id: "1f", label: "Bilans" }
+  - { id: "1g", label: "Diagnostic kiné" }
+  - { id: "1h", label: "PTG J2" }
+  - { id: "1i", label: "PTG HAS" }
+fichesNav:
+  - { id: "2a", label: "Fragilité & Chute" }
+  - { id: "2b", label: "EquiMoG" }
+  - { id: "2c", label: "Diagnostic kiné" }
+  - { id: "2d", label: "PTG" }
+---
+import Section from '../components/Section.astro';
+import Card from '../components/Card.astro';
+import AlertBox from '../components/AlertBox.astro';
+import Tree from '../components/Tree.astro';
+import Grid2 from '../components/Grid2.astro';
+import Grid3 from '../components/Grid3.astro';
+import MiniCard from '../components/MiniCard.astro';
+import Grade from '../components/Grade.astro';
+import FlashCard from '../components/FlashCard.astro';
+import QcmCard from '../components/QcmCard.astro';
+
+{/* ══════════════════════════════════════════
+    COURS — 1a : Définitions & Épidémio
+══════════════════════════════════════════ */}
+<Section id="1a">
+
+<Card title="🧓 Personne Âgée — Définitions essentielles">
+
+<table>
+<thead><tr><th>Concept</th><th>Définition / Valeur clé</th></tr></thead>
+<tbody>
+<tr><td>PA (OMS 2015)</td><td>A dépassé l'espérance de vie à la naissance. France : <strong className="val">~80 ans ♂ / ~87 ans ♀</strong></td></tr>
+<tr><td>Autonomie</td><td>Capacité de <strong>décision</strong> (libre arbitre)</td></tr>
+<tr><td>Indépendance</td><td>Capacité d'<strong>action</strong> physique sans aide tierce</td></tr>
+<tr><td>Robuste → Fragile</td><td className="ok-txt">RÉVERSIBLE</td></tr>
+<tr><td>Fragile → Dépendant</td><td className="err-txt">IRRÉVERSIBLE — porte d'entrée = sarcopénie</td></tr>
+</tbody>
+</table>
+
+<AlertBox type="trap">La dépendance est IRRÉVERSIBLE. Ne jamais confondre avec la fragilité (réversible).</AlertBox>
+
+</Card>
+
+<Card title="📊 Chiffres à retenir">
+
+- Chutes : <span className="val">2 M/an</span> → <span className="val">130 000 hosp.</span> → <span className="val">10 000 décès</span> → 1ère cause de mortalité > 65 ans
+- Fragilité : <span className="val">15%</span> des > 65 ans à domicile
+- Budget kiné : <span className="val">6 milliards €</span>
+- En 2030 : plus de > 65 ans que < 15 ans
+- Espérance de vie en bonne santé = STAGNE (l'écart avec l'EVG se creuse)
+
+</Card>
+
+</Section>
+
+{/* ══════════════════════════════════════════
+    COURS — 1b : Vieillissement & Phases
+══════════════════════════════════════════ */}
+<Section id="1b">
+
+<Card title="🔄 Les 4 Phases du Mouvement">
+
+<table>
+<thead><tr><th>Phase</th><th>Description</th><th>Rééducation ciblée</th></tr></thead>
+<tbody>
+<tr><td>1. Idéation</td><td>Avoir l'idée de bouger</td><td>Sollicitation verbale/tactile</td></tr>
+<tr><td>2. Planification</td><td>Choix du mouvement type, ordre chronologique. <em>Lent, volontaire.</em></td><td>Puzzle moteur, répétition, miroir</td></tr>
+<tr><td>3. Programmation</td><td>Régulation posture/mvt, anticipation, retours sensoriels. <em>Rapide, anticipé.</em></td><td>Exercices <strong>RAPIDES &amp; ALÉATOIRES</strong> (pods, laser)</td></tr>
+<tr><td>4. Exécution</td><td>Contrainte par ↓ vitesse conduction + ↓ puissance musculaire</td><td>Renforcement musculaire</td></tr>
+</tbody>
+</table>
+
+<AlertBox type="trap">Faire du renforcement (exécution) sur un déficit de programmation = soin INADAPTÉ → dépendance iatrogène.</AlertBox>
+<AlertBox type="key">1ère compensation du vieillissement = COGNITIVE, puis musculaire. Vieillir = perdre ET compenser.</AlertBox>
+
+</Card>
+
+<Card title="⚖️ Contrôle Postural — Réactif">
+
+<table>
+<thead><tr><th>Type</th><th>Condition</th><th>Mécanisme</th></tr></thead>
+<tbody>
+<tr><td>Adaptation posturale</td><td>CG reste dans le polygone (petite poussée)</td><td>Déplacer le CG</td></tr>
+<tr><td>Réaction parachute</td><td>CG sort du polygone (grande poussée)</td><td>Déplacer le polygone (faire un pas)</td></tr>
+</tbody>
+</table>
+
+<AlertBox type="trap">Bras en avant DÈS le début d'une réaction parachute = anormal. Préférer poussée antéro-postérieure car les PA sont souvent déjà en limite de polygone postérieur.</AlertBox>
+
+</Card>
+
+</Section>
+
+{/* ══════════════════════════════════════════
+    COURS — 1c : Fragilité & Sarcopénie
+══════════════════════════════════════════ */}
+<Section id="1c">
+
+<Card title="💪 Critères de Fried (2001) — Fragilité">
+
+<table>
+<thead><tr><th>Critère</th><th>Seuil</th></tr></thead>
+<tbody>
+<tr><td>Perte de poids involontaire</td><td className="val">&gt; 4,5 kg ou &gt; 5% / an</td></tr>
+<tr><td>Épuisement ressenti</td><td>Auto-rapporté</td></tr>
+<tr><td>Vitesse de marche ↓</td><td className="val">&lt; 0,8 m/s (4m en 5s)</td></tr>
+<tr><td>Force préhension ↓</td><td className="val">&lt; 30 kg ♂ / &lt; 20 kg ♀</td></tr>
+<tr><td>Sédentarité</td><td>AP insuffisante</td></tr>
+</tbody>
+</table>
+
+<table>
+<thead><tr><th>Score</th><th>Profil</th></tr></thead>
+<tbody>
+<tr><td className="val">0</td><td className="ok-txt">Robuste</td></tr>
+<tr><td className="val">1-2</td><td style={{color:'var(--c3)'}}>Pré-fragile</td></tr>
+<tr><td className="val">3-5</td><td className="err-txt">Fragile → risque dépendance/chute à 1-3 ans</td></tr>
+</tbody>
+</table>
+
+</Card>
+
+<Card title="🦵 Sarcopénie">
+
+<table>
+<thead><tr><th>Composante</th><th>Seuil pathologique</th><th>Test</th></tr></thead>
+<tbody>
+<tr><td>↓ Masse musculaire</td><td className="val">Mollet &lt; 31 cm</td><td>Mètre ruban (⚠️ œdèmes)</td></tr>
+<tr><td>↓ Force</td><td className="val">&lt; 30 kg ♂ / &lt; 20 kg ♀</td><td>Dynamométrie préhension</td></tr>
+<tr><td>↓ Performance</td><td className="val">VM &lt; 0,8 m/s | TAD 5× &gt; 15 s</td><td>SPPB</td></tr>
+</tbody>
+</table>
+
+### SPPB (Short Physical Performance Battery) — score /12
+
+<table>
+<thead><tr><th>Score</th><th>Interprétation</th></tr></thead>
+<tbody>
+<tr><td className="val">0-6</td><td className="err-txt">Faible performance</td></tr>
+<tr><td className="val">7-9</td><td style={{color:'var(--c3)'}}>Intermédiaire</td></tr>
+<tr><td className="val">10-12</td><td className="ok-txt">Haute performance</td></tr>
+</tbody>
+</table>
+
+<AlertBox type="key">SPPB &lt; 8 = seuil d'alerte fragilité/sarcopénie</AlertBox>
+
+</Card>
+
+</Section>
+
+{/* ══════════════════════════════════════════
+    COURS — 1d : Chute & Peur de chuter
+══════════════════════════════════════════ */}
+<Section id="1d">
+
+<Card title="🚨 Chute — Définitions & Épidémio">
+
+- OMS : "Tomber/glisser au sol **involontairement**"
+- <span className="val">30%</span> des PA autonomes chutent | <span className="val">50%</span> des PA dépendants sont chuteurs
+- ATCD de chute = risque <span className="val">×3</span> | AT à la marche = risque <span className="val">×2</span>
+
+<table>
+<thead><tr><th>Type de chuteur</th><th>Définition</th></tr></thead>
+<tbody>
+<tr><td>Accidentel</td><td>Ex : glissade — mais &gt; 70 ans : TOUJOURS bilan éq.</td></tr>
+<tr><td>Occasionnel</td><td>&lt; 2 chutes / 12 mois</td></tr>
+<tr><td>À répétition</td><td className="err-txt">≥ 2 chutes / 12 mois → bilan complet urgent</td></tr>
+</tbody>
+</table>
+
+<AlertBox type="trap">Chez &gt; 70 ans, AUCUNE chute n'est purement accidentelle. Toujours chercher un trouble de l'équilibre sous-jacent.</AlertBox>
+
+</Card>
+
+<Card title="😰 Syndrome Post-Chute & Peur de Tomber">
+
+- Cercle vicieux : peur → ↓ activité → ↓ force → ↑ risque → peur
+- Dépression = rumination du **passé** | Anxiété = appréhension du **futur**
+
+<AlertBox type="key">Pour ↓ la peur de tomber → apprendre à SE RELEVER en 1er. NEM à l'envers : descente au sol AVANT le relevé. Relevé du sol = dès la 1ère séance (omission = faute professionnelle).</AlertBox>
+
+</Card>
+
+</Section>
+
+{/* ══════════════════════════════════════════
+    COURS — 1e : Syndromes gériatriques
+══════════════════════════════════════════ */}
+<Section id="1e">
+
+<Card title="🧩 Syndromes Gériatriques Clés">
+
+<table>
+<thead><tr><th>Syndrome</th><th>Points clés</th></tr></thead>
+<tbody>
+<tr><td><strong>SDPM</strong></td><td>Origine centrale (sous-cortico-frontale). Signes : rétropulsion, marche désorganisée. Urgence kiné : 2h/j, espace antérieur prioritaire.</td></tr>
+<tr><td><strong>HDA</strong></td><td>Hypertonie déformante : pied équin, doigts en griffe. TTT : toxine + mobilisation. Mobiliser pied/orteils TOUJOURS.</td></tr>
+<tr><td><strong>Dénutrition</strong></td><td>Surveiller le POIDS. Réduction prise alimentaire &gt; 50% = critère étiologique.</td></tr>
+<tr><td><strong>Dépendance iatrogène</strong></td><td>3 causes : environnement inadapté / soins inadaptés / omission de soins.</td></tr>
+</tbody>
+</table>
+
+<AlertBox type="trap">Dépendance iatrogène = créée par le soignant. Ex : prescrire du renforcement sur un déficit de programmation, ne pas travailler le relevé du sol, garder les barrières de lit systématiquement.</AlertBox>
+
+</Card>
+
+</Section>
+
+{/* ══════════════════════════════════════════
+    COURS — 1f : Bilans & Tests clés
+══════════════════════════════════════════ */}
+<Section id="1f">
+
+<Card title="🔬 Tests — Tableau Synthèse">
+
+<table>
+<thead><tr><th>Test</th><th>Évalue</th><th>Seuil clé</th><th>Norme</th></tr></thead>
+<tbody>
+<tr><td>TUG</td><td>Autonomie hors chambre, qualité ½ tour</td><td className="val">&gt; 20s = dépendance</td><td className="ok-txt">~12 s</td></tr>
+<tr><td>TAD 5×</td><td>Puissance MI, sarcopénie</td><td className="val">&gt; 15 s</td><td className="ok-txt">&lt; 12 s</td></tr>
+<tr><td>FRT</td><td>Stabilité posturale, vide antérieur</td><td className="val">&lt; 20 cm = peur vide ant.</td><td className="ok-txt">26 cm</td></tr>
+<tr><td>VM 4m</td><td>Fragilité, sarcopénie</td><td className="val">5s = sarcop. / 6s = fragile</td><td className="ok-txt">&lt; 3 s</td></tr>
+<tr><td>Unipodal</td><td>Équilibre unipodal, risque chute</td><td className="val">&lt; 5 s = risque chute</td><td className="ok-txt">&gt; 10 s</td></tr>
+<tr><td>SPPB</td><td>Fragilité globale</td><td className="val">&lt; 8 = alerte</td><td className="ok-txt">10-12</td></tr>
+<tr><td>TMM</td><td>Autonomie EN chambre (/20)</td><td>—</td><td>—</td></tr>
+<tr><td>BDS</td><td>Rétropulsion (score 0-15)</td><td>Plus bas = mieux</td><td>0</td></tr>
+<tr><td>EVS</td><td>Peur de chuter</td><td>Oui/Non</td><td>—</td></tr>
+<tr><td>Morse</td><td>Risque chute en établissement</td><td>Items pondérés</td><td>—</td></tr>
+</tbody>
+</table>
+
+<AlertBox type="key">VM 4m : départ ET arrivée LANCÉS. Patient ne doit PAS savoir qu'il est chronométré. 4m en 4s = seuil de début de fragilité.</AlertBox>
+<AlertBox type="trap">Circonf. mollet &lt; 31 cm = ↓ masse musculaire, MAIS faussé si œdèmes des MI.</AlertBox>
+
+### Batteries cliniques
+
+- **Prévention chute :** EVS + unipodal + TUG + poussée sternale + walking & talking + relevé du sol
+- **Prédictif chute :** Unipodal + TUG + FRT
+- **Autonomie fonctionnelle :** TAD + FRT + double tâche marche
+- **SDPM :** EVS + TMM + TUG + BDS + FRT
+
+</Card>
+
+<Card title="📱 ICOPE — Repérage Perte d'Autonomie">
+
+- Pour PA > 60 ans AUTONOMES (robuste/fragile). **Pas** pour les dépendants.
+- 6 capacités intrinsèques évaluées (motricité, cognition, vision, audition, nutrition, dépression)
+- 4 étapes : Repérage → Évaluation → Plan personnalisé → Suivi
+- ICOPE Monitor : appli d'auto-évaluation → alerte si ↓ capacités
+
+</Card>
+
+</Section>
+
+{/* ══════════════════════════════════════════
+    COURS — 1g : Diagnostic & Rééducation
+══════════════════════════════════════════ */}
+<Section id="1g">
+
+<Card title="🎯 Diagnostic Kiné — Modèle T-pro">
+
+Écart entre ce que le patient **VEUT faire** (projet) et ce qu'il **PEUT faire** (capacités).
+
+- Structure : Intégrité structurelle + Capacité fonctionnelle + État situationnel
+- Le diagnostic kiné **évolue** en permanence (≠ diagnostic médical fixe)
+- Objectifs : **structurels** (déficits) + **fonctionnels** (activités/participation)
+
+<AlertBox type="key">EBP = 3 piliers équilibrés : Expérience clinique + Preuve scientifique + Projet bio-psycho-social du patient. Aucun seul ne doit dominer.</AlertBox>
+
+</Card>
+
+<Card title="🏃 Rééducation Gériatrique — Points Clés">
+
+<table>
+<thead><tr><th>Aide technique</th><th>Indication</th><th>Remarque</th></tr></thead>
+<tbody>
+<tr><td>Déambulateur 4 patins</td><td>Déficit force MI</td><td>—</td></tr>
+<tr><td>Rollator 2 roues</td><td>Déficit équilibre dyn. + antépulsion</td><td>—</td></tr>
+<tr><td>Rollator 4 roues</td><td>Déficit antépulsion seul</td><td className="err-txt">Pas avec un caddie !</td></tr>
+<tr><td>Canne simple</td><td>Déficit équilibre unipodal</td><td>—</td></tr>
+<tr><td>Cannes anglaises</td><td className="err-txt">JAMAIS en gériatrie</td><td className="err-txt">Favorise rétropulsion</td></tr>
+</tbody>
+</table>
+
+### Rééducation selon la phase atteinte
+
+- **Planification :** Mouvement volontaire lent, puzzle moteur, miroir, répétition séquencée
+- **Programmation :** Exercices RAPIDES & ALÉATOIRES — pods, laser, signaux lumineux
+- **Exécution :** Renforcement musculaire ciblé
+- **Relevé du sol :** Dès la 1ère séance. Chevalier servant → dressé sur les genoux
+
+</Card>
+
+</Section>
+
+{/* ══════════════════════════════════════════
+    COURS — 1h : PTG : Étiologie & J2
+══════════════════════════════════════════ */}
+<Section id="1h">
+
+<Card title="🦿 PTG — Étiologie & Cas Clinique">
+
+- Résection surfaces articulaires + implants métal/polyéthylène
+- Causes : Arthrose <span className="val">&gt; 95%</span>, PR, post-traumatique
+
+### Mme B. — 90 ans (cas clinique)
+
+<table>
+<thead><tr><th>Facteur</th><th>Détail clinique</th></tr></thead>
+<tbody>
+<tr><td>Contexte</td><td>Veuve, isolement social, très active (potager, conduite, étage)</td></tr>
+<tr><td>ATCD</td><td>PTH droite, gonarthrose G, anticoagulants</td></tr>
+<tr><td>Projet patient</td><td>Courses, conduite, jardinage → oriente TOUTE la PEC</td></tr>
+</tbody>
+</table>
+
+### Bilan J2 — Résultats
+
+<table>
+<thead><tr><th>Domaine</th><th>Résultats</th></tr></thead>
+<tbody>
+<tr><td>Douleur</td><td>EN repos <span className="val">6/10</span>, mobilisation <span className="val">8/10</span>. Inflammatoire (nuit + repos)</td></tr>
+<tr><td>Cutané-trophique</td><td>Œdème +5 cm, godet +, rougeur, hématome</td></tr>
+<tr><td>Vasculaire</td><td className="err-txt">🚩 Phlébite : ballant mollet + rougeur + signe Homans</td></tr>
+<tr><td>Articulaire</td><td>Flessum passif <span className="val">15°</span>, flexion <span className="val">50°</span></td></tr>
+<tr><td>Fonctionnel</td><td>Marche douloureuse avec AT</td></tr>
+</tbody>
+</table>
+
+### Objectifs Opérationnels J2
+
+<table>
+<thead><tr><th>Objectif</th><th>Cible</th></tr></thead>
+<tbody>
+<tr><td>Douleur</td><td className="val">EVA ≤ 3 au repos</td></tr>
+<tr><td>Extension genou</td><td className="val">Proche 0°</td></tr>
+<tr><td>Flexion genou</td><td className="val">≥ 60°</td></tr>
+<tr><td>Quad</td><td>Contraction volontaire visible</td></tr>
+<tr><td>Marche</td><td>Déambulateur ou 2 cannes</td></tr>
+<tr><td>Transferts</td><td>Lit ↔ fauteuil autonome</td></tr>
+<tr><td>TVP</td><td>Mobilisation cheville efficace</td></tr>
+</tbody>
+</table>
+
+<AlertBox type="trap">🚩 Phlébite = STOP immédiat + avis médical urgent. Ballant mollet + rougeur + douleur flexion dorsale cheville.</AlertBox>
+
+</Card>
+
+</Section>
+
+{/* ══════════════════════════════════════════
+    COURS — 1i : PTG : J15 & HAS
+══════════════════════════════════════════ */}
+<Section id="1i">
+
+<Card title="📅 PTG — J15 & Recommandations HAS">
+
+### Objectifs J15
+
+<table>
+<thead><tr><th>Objectif</th><th>Cible</th></tr></thead>
+<tbody>
+<tr><td>Douleur à l'effort</td><td className="val">EVA ≤ 3 à la marche</td></tr>
+<tr><td>Extension</td><td className="val">0°</td></tr>
+<tr><td>Flexion</td><td className="val">≥ 90° (idéalement 100°)</td></tr>
+<tr><td>Testing quad</td><td className="val">≥ 3/5</td></tr>
+<tr><td>Marche</td><td>1 canne ou sans AT</td></tr>
+</tbody>
+</table>
+
+### Drapeaux Rouges Post-PTG
+
+<table>
+<thead><tr><th>Signe</th><th>Seuil → Action</th></tr></thead>
+<tbody>
+<tr><td>Fièvre</td><td className="err-txt">&gt; 38°C → chirurgien</td></tr>
+<tr><td>Flexion insuffisante</td><td className="err-txt">&lt; 90° à 4 semaines → chirurgien</td></tr>
+<tr><td>Écoulement cicatrice</td><td className="err-txt">Infection ? → chirurgien</td></tr>
+<tr><td>Douleur repos ↑</td><td className="err-txt">→ chirurgien</td></tr>
+<tr><td>Suspicion TVP/EP</td><td className="err-txt">→ urgences</td></tr>
+</tbody>
+</table>
+
+<AlertBox type="has">PTG ne nécessite PAS systématiquement un SSR. Ambulatoire possible si critères remplis.</AlertBox>
+
+### Critères de Sortie (HAS)
+
+- Douleur repos EVA <span className="val">&lt; 5</span>
+- Flexion active <span className="val">≥ 70-80°</span>
+- Transferts autonomes lit/fauteuil
+- Marche <span className="val">≥ 30 m</span> (avec/sans AT)
+- Escaliers si nécessaire (OUI pour Mme B.)
+
+### Techniques Recommandées (HAS)
+
+<table>
+<thead><tr><th>Technique</th><th>Grade</th><th>Phase</th></tr></thead>
+<tbody>
+<tr><td>Cryothérapie</td><td><Grade level="a" /></td><td>Phase aiguë</td></tr>
+<tr><td>Mobilisation articulaire précoce</td><td><Grade level="a" /></td><td>Dès J2</td></tr>
+<tr><td>Renforcement musculaire</td><td><Grade level="a" /></td><td>Dès J2</td></tr>
+<tr><td>NMES quadriceps</td><td><Grade level="a" /></td><td>À partir J15</td></tr>
+<tr><td>Proprioception fonctionnelle</td><td><Grade level="b" /></td><td>Phase secondaire</td></tr>
+</tbody>
+</table>
+
+<AlertBox type="key">Rééducation pré-op : ~10 séances recommandées (amplitudes, renforcement MI, apprentissage post-op).</AlertBox>
+
+</Card>
+
+</Section>
+
+{/* ══════════════════════════════════════════
+    FICHE — 2a : Fragilité & Chute
+══════════════════════════════════════════ */}
+<Section id="2a">
+
+<Card title="⚡ Physiopathologie Flash — Fragilité → Dépendance">
+
+<Tree>
+{`Sédentarité + ↓ apports protéiques + ↓ hormones anaboliques
+↓
+SARCOPÉNIE (↓ masse + ↓ force + ↓ performance)
+↓
+↓ Vitesse de marche → Fragilité (Fried ≥ 3)
+↓
+Chute / Événement aigu
+↓
+Immobilisation → aggravation sarcopénie
+↓
+DÉPENDANCE (irréversible)`}
+</Tree>
+
+<AlertBox type="key">Porte d'entrée dans la dépendance = SARCOPÉNIE. La prévenir = prévenir la dépendance.</AlertBox>
+
+</Card>
+
+<Card title="🧪 Tests EBP — Fragilité & Chute avec grades">
+
+<table>
+<thead><tr><th>Test</th><th>Seuil pathologique</th><th>Grade EBP</th></tr></thead>
+<tbody>
+<tr><td>SPPB</td><td className="val">&lt; 8</td><td><Grade level="a" /></td></tr>
+<tr><td>VM 4m</td><td className="val">&lt; 0,8 m/s (&gt; 5 s)</td><td><Grade level="a" /></td></tr>
+<tr><td>TAD 5× (bras croisés)</td><td className="val">&gt; 15 s</td><td><Grade level="a" /></td></tr>
+<tr><td>Préhension dynamométrique</td><td className="val">&lt; 30 kg ♂ / &lt; 20 kg ♀</td><td><Grade level="a" /></td></tr>
+<tr><td>Unipodal</td><td className="val">&lt; 5 s</td><td><Grade level="a" /></td></tr>
+<tr><td>TUG</td><td className="val">&gt; 20 s = dépendance</td><td><Grade level="a" /></td></tr>
+<tr><td>FRT</td><td className="val">&lt; 20 cm (norme : 26 cm)</td><td><Grade level="a" /></td></tr>
+<tr><td>Circonf. mollet</td><td className="val">&lt; 31 cm</td><td><Grade level="b" /></td></tr>
+</tbody>
+</table>
+
+</Card>
+
+<Card title="🌳 Arbre Décisionnel — Prise en charge de la chute">
+
+<Tree>
+{`PA consulte après chute
+│
+├─ > 70 ans ? → Oui → JAMAIS purement accidentelle
+│                        → Bilan équilibre systématique
+│
+├─ ≥ 2 chutes / 12 mois → Chuteur à répétition → EquiMoG COMPLET
+│
+├─ Peur de tomber (EVS +) ?
+│   └─ OUI → 1er objectif : RELEVÉ DU SOL (descente avant relevé)
+│           → FRT < 20 cm ? → Travail vide antérieur + cheville
+│
+└─ EquiMoG → Identifier phase défaillante
+    ├─ Planification → Puzzle moteur, miroir, répétition
+    ├─ Programmation → Rapide & aléatoire (pods, laser)
+    └─ Exécution → Renforcement musculaire`}
+</Tree>
+
+</Card>
+
+</Section>
+
+{/* ══════════════════════════════════════════
+    FICHE — 2b : EquiMoG Raisonnement
+══════════════════════════════════════════ */}
+<Section id="2b">
+
+<Card title="🔎 EquiMoG — Interprétation Clinique">
+
+<table>
+<thead><tr><th>Observation</th><th>Phase atteinte</th><th>Rééducation</th></tr></thead>
+<tbody>
+<tr><td>Ne recule pas les pieds pour se lever</td><td>Planification</td><td>Répétition volontaire, miroir, séquençage</td></tr>
+<tr><td>Pas de déport CG avant sur pointes</td><td>Programmation</td><td>Exercices rapides et aléatoires</td></tr>
+<tr><td>S'arrête de marcher quand on lui parle</td><td>Planification (marche volontaire)</td><td>Double tâche cognitive progressive</td></tr>
+<tr><td>&gt; 4 pas au ½ tour</td><td>Exécution (équilibre unipodal)</td><td>Renforcement MI + proprioception</td></tr>
+<tr><td>Pas en arrière pour amorcer ½ tour</td><td>Planification (mauvais pattern)</td><td>Répétition ½ tour correct en marche avant</td></tr>
+<tr><td>Pas de réaction parachute</td><td>Programmation réactive</td><td>Perturbations réactives progressives</td></tr>
+<tr><td>VM &lt; 0,65 m/s</td><td>Exécution / Sarcopénie</td><td>Renforcement, puissance MI</td></tr>
+</tbody>
+</table>
+
+### Dépendances Sensorielles
+
+<table>
+<thead><tr><th>Dépendance</th><th>Test positif</th><th>Rééducation</th></tr></thead>
+<tbody>
+<tr><td>Visio-dépendante</td><td>Pieds éc. / YF / sol dur</td><td>Sevrage progressif infos visuelles</td></tr>
+<tr><td>Podo-dépendante</td><td>Pieds éc. / YO / mousse</td><td>Stimulation podal, Perfetti, massages</td></tr>
+<tr><td>Polygo-dépendante</td><td>Pieds joints / YO / sol dur</td><td>Réduction progressive du polygone</td></tr>
+</tbody>
+</table>
+
+<AlertBox type="trap">Patient tient sur mousse mais pas YF → Visio-dépendant (ne sent pas ses pieds → compense avec la vue, mais n'est PAS podo-dépendant).</AlertBox>
+
+</Card>
+
+</Section>
+
+{/* ══════════════════════════════════════════
+    FICHE — 2c : Diagnostic Kiné
+══════════════════════════════════════════ */}
+<Section id="2c">
+
+<Card title="📝 Diagnostic Kiné Gériatrique — Structure">
+
+<Tree>
+{`BILAN (T-pro)
+├── Intégrité structurelle : lésions anatomiques
+├── Capacité fonctionnelle : ce que le patient PEUT faire
+└── État situationnel : environnement, entourage, activités
+
+PROJET PATIENT
+└── Ce que le patient VEUT faire → oriente TOUS les objectifs
+
+DIAGNOSTIC KINÉ
+"[Prénom, âge], [pathologie] avec [déficits], limitant [activités]
+en regard de son projet de [objectif patient]."
+
+OBJECTIFS
+├── Structurels : ↓ douleur, ↑ amplitudes, ↑ force
+└── Fonctionnels : marche autonome, escaliers, retour domicile`}
+</Tree>
+
+</Card>
+
+</Section>
+
+{/* ══════════════════════════════════════════
+    FICHE — 2d : PTG Fiche Clinique
+══════════════════════════════════════════ */}
+<Section id="2d">
+
+<Card title="🦿 Fiche PTG — Raisonnement Complet">
+
+<Tree>
+{`POST-PTG — J2
+├─ 🚩 Exclure DRAPEAUX ROUGES en PREMIER
+│   ├─ Phlébite : ballant mollet + rougeur + Homans → STOP + médecin
+│   ├─ Fièvre > 38°C → médecin
+│   └─ Écoulement/déhiscence → médecin
+│
+├─ Douleur > 5/10 repos → optimiser antalgiques avant séance
+│
+└─ Rééducation J2
+    ├─ Extension → 0° (flessum à réduire en urgence)
+    ├─ Flexion → ≥ 60°
+    ├─ Quad → contraction volontaire
+    ├─ Mobilisation cheville (prévention TVP)
+    └─ Marche avec AT + transferts autonomes
+
+J15 (SSR)
+├─ Flexion < 90° → Intensifier mobilisation
+├─ Flexion < 90° à J28 → 🚩 Chirurgien
+└─ Objectifs : Flex ≥ 90-100°, quad ≥ 3/5, marche 1 canne`}
+</Tree>
+
+### Spécificités Mme B. (90 ans)
+
+<table>
+<thead><tr><th>Facteur</th><th>Impact PEC</th></tr></thead>
+<tbody>
+<tr><td>Isolement social</td><td>Vérifier réseau pour retour à domicile, surveiller dépression</td></tr>
+<tr><td>Anticoagulants</td><td>Surveiller hématome lors mobilisations</td></tr>
+<tr><td>PTH droite (ATCD)</td><td>Surveiller hanche droite lors transferts</td></tr>
+<tr><td>Gonarthrose G</td><td>Genou G compensateur → surveiller</td></tr>
+<tr><td>Maison à l'étage</td><td>Escaliers = critère fonctionnel OBLIGATOIRE de sortie</td></tr>
+</tbody>
+</table>
+
+<AlertBox type="key">90 ans ≠ protocole gériatrique standard. Mme B. est très active. Son projet (jardinage, conduite, courses) oriente une PEC AMBITIEUSE et individualisée.</AlertBox>
+
+</Card>
+
+</Section>
+
+{/* ══════════════════════════════════
+    FLASHCARDS — UE23
+══════════════════════════════════ */}
+<Section id="flashcards">
+
+<FlashCard theme="Fragilité" q="Patient 72 ans, VM 4m en 6s, perte 5 kg/an, épuisement ressenti. Profil Fried et risque ?">
+3 critères sur 5 → FRAGILE. Risque : perte autonomie, chutes, institutionnalisation dans 1-3 ans. Faire SPPB pour évaluer la gravité (&lt; 8 = alerte). Rappel : 4 m en 6s = fragile (5s = sarcopénie).
+</FlashCard>
+
+<FlashCard theme="Fragilité" q="Une personne 'fragile' selon Fried va bien. Faut-il la traiter comme un patient ordinaire ?">
+NON. La fragilité est PRÉ-clinique. On agit en PRÉVENTION pour éviter la bascule vers la dépendance (irréversible). Objectif : maintenir les capacités, ne pas attendre la décompensation.
+</FlashCard>
+
+<FlashCard theme="Sarcopénie" q="TAD 5× = 17s, VM = 5,5s, mollet = 33cm. Y a-t-il sarcopénie ? Piège ?">
+OUI — 2/3 critères positifs (TAD &gt; 15s + VM &gt; 5s). Mollet = 33 cm (&gt; 31 cm) → normal. PIÈGE : un œdème des MI peut fausser la circonf. mollet en faux négatif.
+</FlashCard>
+
+<FlashCard theme="Sarcopénie" q="SPPB = 7. Que conclure ? Prochaine étape ?">
+Performance INTERMÉDIAIRE (7-9). Seuil d'alerte sarcopénie = &lt; 8. Ici, pas encore franchi mais proche. Surveiller, programmer EquiMoG, travailler puissance MI. Réévaluer à 3 mois.
+</FlashCard>
+
+<FlashCard theme="Phases du mouvement" q="Patient ne s'arrête pas de marcher quand on lui parle, mais fait 6 pas pour le ½ tour. Quelle phase est atteinte ?">
+EXÉCUTION (équilibre unipodal dynamique insuffisant). Le ½ tour &gt; 4 pas révèle un déficit d'équilibre unipodal intrinsèque. Double tâche normale → planification/programmation préservées. Rééducation : renforcement MI + proprioception.
+</FlashCard>
+
+<FlashCard theme="Phases du mouvement" q="Patient s'arrête de marcher dès qu'on lui parle. Quelle phase ? Quelle rééducation ?">
+PLANIFICATION — la marche est devenue volontaire (a perdu son automatisme). Rééducation : double tâche COGNITIVE progressive. Pas du renforcement (ce n'est pas un déficit d'exécution).
+</FlashCard>
+
+<FlashCard theme="Phases du mouvement" q="Vous prescrivez du renforcement quad à un patient dont l'EquiMoG révèle un problème de programmation. Quel type d'erreur ?">
+SOIN INADAPTÉ → dépendance iatrogène. Le renforcement = exécution. Le problème de programmation nécessite des exercices RAPIDES &amp; ALÉATOIRES (pods, laser). Travailler la mauvaise phase ne rééduque pas le déficit.
+</FlashCard>
+
+<FlashCard theme="Équilibre" q="Poussée sternale : le patient fait immédiatement un grand pas en arrière. Adaptation posturale ou réaction parachute ? Que révèle une réaction parachute précoce ?">
+Dépend : si le CG a été poussé HORS du polygone → réaction parachute normale. Si la poussée était petite (dans le polygone) mais que le patient a quand même fait un pas → réaction parachute déclenchée trop tôt = seuil abaissé = déficit d'adaptation posturale.
+</FlashCard>
+
+<FlashCard theme="Équilibre" q="Patient tient 15s pieds écartés YO sol dur, mais chute YF. Diagnostic et rééducation ?">
+VISIO-DÉPENDANT : perd les infos visuelles → décompense. Souvent car proprioception plantaire ↓. Rééducation : massages pieds, Perfetti, plateau Freeman. Sevrage progressif des informations visuelles.
+</FlashCard>
+
+<FlashCard theme="Équilibre" q="TUG = 23s. Que conclure ? Sur quoi porte votre analyse qualitative ?">
+TUG &gt; 20s = niveau de DÉPENDANCE. Autonomie hors chambre compromise. Qualitative : utilisation des bras pour se lever, stabilité à la marche, qualité du ½ tour (nombre de pas), marche avant vs arrière. ITUG : si écart &gt; 50% → troubles cognitifs possibles.
+</FlashCard>
+
+<FlashCard theme="Chute" q="Patient 75 ans, chute sur verglas. Le médecin dit 'chute accidentelle, pas de bilan nécessaire'. Que faire ?">
+S'opposer poliment : chez &gt; 70 ans, AUCUNE chute n'est purement accidentelle. Bilan d'équilibre SYSTÉMATIQUE. Le verglas = facteur déclenchant révélateur d'un terrain fragile. Réaliser a minima : EVS + unipodal + TUG + EquiMoG si doute.
+</FlashCard>
+
+<FlashCard theme="Chute" q="1ère chose à faire chez une PA ayant très peur de tomber ?">
+Travailler le RELEVÉ DU SOL dès la 1ère séance. NEM à l'envers : descente au sol AVANT le relevé. Démystifier le sol. Chevalier servant → dressé sur les genoux. Sans ça, la peur persiste même si l'équilibre s'améliore.
+</FlashCard>
+
+<FlashCard theme="Chute" q="Vous avez fait 3 séances d'équilibre statique et de renforcement. La peur de chuter persiste. Qu'avez-vous oublié ?">
+Relevé du sol NON TRAVAILLÉ = OMISSION DE SOIN. C'est la base de la rééducation de la peur de chuter. Sans savoir se relever, la peur reste ancrée. Retravailler immédiatement.
+</FlashCard>
+
+<FlashCard theme="EquiMoG" q="VM spontanée = 4m en 4,5s. Patient 78 ans. Que conclure ?">
+Début de fragilité (seuil = 4 s). Pas encore sarcopénie (seuil = 5 s). Surveiller et réévaluer. Rappel : mesurer VITESSE SPONTANÉE (départ et arrivée lancés, patient ne doit pas savoir qu'il est chronométré).
+</FlashCard>
+
+<FlashCard theme="EquiMoG" q="À la préparation du ½ tour, le patient fait un pas EN ARRIÈRE avant de tourner. Valide ou invalide ?">
+TEST INVALIDE. Le ½ tour se fait en MARCHE AVANT (tourner un pied dans le sens voulu). Un pas en arrière = pattern anormal = déficit de PLANIFICATION (choix du mouvement type). Rééduquer : répétition volontaire du bon pattern, miroir.
+</FlashCard>
+
+<FlashCard theme="EquiMoG" q="FRT = 18 cm. Que conclure ? Rééducation prioritaire ?">
+FRT &lt; 20 cm = peur du vide ANTÉRIEUR objectivée (norme = 26 cm). Rééducation : travail flexion dorsale cheville, sensibilité avant-pied, peur du vide progressivement (ballon de Klein assis → debout). Planification du transfert assis-debout.
+</FlashCard>
+
+<FlashCard theme="Aides techniques" q="PA en rétropulsion marche avec cannes anglaises. Que faire ?">
+Les cannes anglaises sont CONTRE-INDIQUÉES en gériatrie : elles favorisent la rétropulsion (90% des PA gériatriques sont en rétropulsion). Proposer rollator 2 roues (déficit antépulsion + équilibre dyn.) ou canne simple (déficit équilibre unipodal). Informer le prescripteur.
+</FlashCard>
+
+<FlashCard theme="Dépendance iatrogène" q="PA hospitalisé 10 jours, repas au lit, aucune sollicitation fonctionnelle. Conséquences ?">
+Dépendance iatrogène : environnement inadapté + omission de soins. Conséquences : sarcopénie rapide (~1% force/j au repos), ↓ proprioception, ↓ contrôle postural, SDPM possible. Chaque jour alité ≈ 3 jours de rééducation pour récupérer.
+</FlashCard>
+
+<FlashCard theme="Dépendance iatrogène" q="En gériatrie, quand est-on responsable juridiquement d'une chute de la PA ?">
+Seulement si la PA chute EN VOTRE PRÉSENCE. À domicile ou en dehors de la séance : la PA est responsable de ses choix (autonomie = libre arbitre). Le kiné peut conseiller mais ne peut imposer une aide technique si la PA refuse.
+</FlashCard>
+
+<FlashCard theme="PTG" q="J2 post-PTG : ballant du mollet + rougeur + douleur à la flexion dorsale de cheville. Que faites-vous ?">
+🚩 DRAPEAU ROUGE — suspicion de phlébite (TVP). ARRÊT IMMÉDIAT de la rééducation. Contact médical urgent. Ne pas mobiliser. Vérifier anticoagulation. En cas d'EP associée (dyspnée, SpO2 ↓) → urgences.
+</FlashCard>
+
+<FlashCard theme="PTG" q="J2 post-PTG, flessum 15°, flexion 50°, douleur 6/10 au repos. Objectifs prioritaires et cibles chiffrées ?">
+1. Douleur ≤ 3/10 repos. 2. Extension → 0° (flessum urgent). 3. Flexion ≥ 60°. 4. Contraction quad visible. 5. Marche avec déambulateur/2 cannes. 6. Transferts lit↔fauteuil autonomes. 7. Mobilisation cheville (prévention TVP).
+</FlashCard>
+
+<FlashCard theme="PTG" q="J15 post-PTG : flexion à 85°. L'objectif est-il atteint ? Que faire à J28 si &lt; 90° ?">
+NON — objectif J15 : flexion ≥ 90° (idéalement 100°). À J28 (4 semaines) : flexion &lt; 90° = DRAPEAU ROUGE → avis chirurgical obligatoire. Intensifier : mobilisation articulaire + NMES quadriceps.
+</FlashCard>
+
+<FlashCard theme="PTG" q="Mme B. 90 ans, PTG J15, veut rentrer chez elle. Critères cliniques HAS à vérifier ?">
+1. Douleur repos EVA &lt; 5. 2. Flexion active ≥ 70-80°. 3. Transferts lit/fauteuil autonomes. 4. Marche ≥ 30m. 5. Escaliers (OBLIGATOIRE pour Mme B. = maison à l'étage). + Critères psychosociaux : entourage, accès soins à domicile.
+</FlashCard>
+
+<FlashCard theme="PTG" q="Techniques recommandées Grade A à J2 post-PTG ?">
+Grade A : Cryothérapie (↓ inflammation + épanchement), Mobilisation articulaire précoce, Renforcement musculaire (quad, fessiers). NMES = recommandée à partir de J15. Massage = antalgique + drainage dès J2.
+</FlashCard>
+
+<FlashCard theme="PTG" q="À J15, la cicatrice PTG présente un écoulement séreux. Que faire ?">
+🚩 DRAPEAU ROUGE — écoulement = suspicion d'infection (même si séreux). Avis chirurgical immédiat. L'hypersensibilité seule et la légère rougeur en diminution sont normales à J15. L'écoulement est TOUJOURS anormal.
+</FlashCard>
+
+<FlashCard theme="Raisonnement" q="Médecin vous envoie un PA 85 ans pour 'rééducation de la marche'. Quelle est votre 1ère question ?">
+Quel est le PROJET du patient ? La rééducation n'a de sens que rapportée à ce projet. 'Faire marcher le patient' n'est pas un objectif. Où ? Pour faire quoi ? Avec qui ? En quelle situation ? Le projet oriente TOUT.
+</FlashCard>
+
+<FlashCard theme="Raisonnement" q="PA 80 ans adressé pour lombalgie. Vous observez une rétropulsion et des difficultés d'équilibre. Que faites-vous ?">
+Traiter les DEUX. Ne traiter que la lombalgie = OMISSION DE SOIN. Réaliser un EquiMoG complet pour objectiver le trouble d'équilibre et identifier la phase défaillante. Intégrer les deux pathologies dans le diagnostic kiné.
+</FlashCard>
+
+<FlashCard theme="Raisonnement" q="SDPM diagnostiqué. Vous avez 2h/j de rééducation. Par quoi commencez-vous ?">
+RÉASSURANCE du vide antérieur = urgence kiné. Séances ++ avec répétitions : retournement au lit → assis sans dossier → penché en avant → retrouver l'espace antérieur. Relevé du sol dès la 1ère séance. Puis transferts et marche.
+</FlashCard>
+
+<FlashCard theme="Raisonnement" q="PA visio-dépendante et podo-dépendante. Laquelle traitez-vous en premier et pourquoi ?">
+PODO-dépendance en 1er. Si le patient ne sent pas ses pieds (podo), il devient visio-dépendant PAR COMPENSATION. En traitant la sensibilité podal (massages, Perfetti), la visio-dépendance peut se réduire naturellement. Traiter la cause avant la compensation.
+</FlashCard>
+
+<FlashCard theme="Raisonnement" q="Chaussures plates prescrites systématiquement à tous les PA. Est-ce correct ?">
+NON. Risque de créer une PODO-DÉPENDANCE iatrogène si le patient n'a pas de déficit de proprioception plantaire. Les chaussures à semelles fines n'aident que si déficit proprioceptif confirmé. Sans déficit = on induit une dépendance aux informations podales.
+</FlashCard>
+
+</Section>
+
+{/* ══════════════════════════════════
+    QCM — UE23
+══════════════════════════════════ */}
+<Section id="qcm">
+
+<QcmCard n={1} type="QCS" tag="Cas clinique" ctx="Mme B., 90 ans, J2 post-PTG droite. Vous notez un ballant du mollet droit, une rougeur, et une douleur à la flexion dorsale de cheville." q="Quelle est votre 1ère action ?" opts={["A. Commencer la mobilisation du genou en flexion","B. Stopper la rééducation et contacter le médecin immédiatement","C. Appliquer de la cryothérapie sur le genou","D. Réaliser un massage de drainage"]} ans={[1]}>
+A: FAUX — Contre-indiqué en cas de suspicion de phlébite (risque d'embolisation). **B: VRAI** — Ballant mollet + rougeur + douleur à la flexion dorsale = signe de Homans positif → suspicion TVP → STOP + médecin urgent. C: FAUX — La cryothérapie est indiquée sur le genou mais ne traite pas la phlébite. D: FAUX — Un massage est contre-indiqué en cas de suspicion de TVP.
+</QcmCard>
+
+<QcmCard n={2} type="QCM" tag="Fragilité" q="Parmi les critères de Fried (2001), lesquels définissent la fragilité chez la PA ?" opts={["A. Perte de poids involontaire > 4,5 kg/an","B. Antécédent de chute dans les 12 derniers mois","C. Vitesse de marche < 0,8 m/s","D. Épuisement ressenti par le patient","E. Score MMSE < 24"]} ans={[0,2,3]}>
+**A: VRAI** — Critère de Fried n°1. B: FAUX — La chute n'est pas un critère de Fried. **C: VRAI** — Critère de Fried n°3 (4m en 5s). **D: VRAI** — Critère de Fried n°2. E: FAUX — Le MMSE n'est pas un critère de Fried (fragilité physique).
+</QcmCard>
+
+<QcmCard n={3} type="QCS" tag="Phases du mouvement" q="Un patient gériatrique s'arrête de marcher dès qu'on lui parle. Quelle phase du mouvement est principalement atteinte ?" opts={["A. Idéation","B. Planification","C. Programmation","D. Exécution"]} ans={[1]}>
+A: FAUX — L'idéation c'est avoir l'idée de bouger. **B: VRAI** — La marche est devenue volontaire = perte de l'automatisme = déficit de planification. C: FAUX — La programmation concerne l'anticipation et les ajustements rapides. D: FAUX — L'exécution concerne la force musculaire et la vitesse de conduction.
+</QcmCard>
+
+<QcmCard n={4} type="QCS" tag="Phases du mouvement" q="Pour rééduquer un déficit de PROGRAMMATION, quelle approche est la plus adaptée ?" opts={["A. Renforcement musculaire isotonique avec charges progressives","B. Répétition volontaire et lente des transferts (puzzle moteur)","C. Exercices rapides et aléatoires (laser, pods, signaux lumineux)","D. Étirements musculaires passifs"]} ans={[2]}>
+A: FAUX — Le renforcement cible l'exécution, pas la programmation. B: FAUX — Répétition volontaire lente = planification (pas programmation). **C: VRAI** — La programmation requiert des exercices RAPIDES et ALÉATOIRES. D: FAUX — Les étirements n'adressent pas les phases motrices cognitives.
+</QcmCard>
+
+<QcmCard n={5} type="QCM" tag="Sarcopénie" q="Quels tests permettent d'évaluer la sarcopénie ?" opts={["A. TAD 5 fois bras croisés > 15 secondes","B. TUG > 20 secondes","C. Vitesse de marche < 0,8 m/s sur 4 mètres","D. Circonférence mollet < 31 cm","E. FRT < 20 cm"]} ans={[0,2,3]}>
+**A: VRAI** — TAD > 15s = ↓ puissance MI = critère sarcopénie. B: FAUX — TUG > 20s = dépendance, pas directement sarcopénie. **C: VRAI** — VM < 0,8 m/s = ↓ performance musculaire. **D: VRAI** — Mollet < 31 cm = ↓ masse musculaire. Attention aux œdèmes. E: FAUX — FRT évalue stabilité posturale et peur du vide antérieur.
+</QcmCard>
+
+<QcmCard n={6} type="QCS" tag="Chute" ctx="Une PA de 73 ans chute en glissant sur une marche mouillée. Le médecin conclut à une 'chute accidentelle'." q="Quelle est la bonne attitude kinésithérapique ?" opts={["A. Accepter la conclusion médicale, pas de bilan d'équilibre nécessaire","B. Réaliser un bilan d'équilibre car chez > 70 ans il n'y a jamais de chute purement accidentelle","C. Attendre une 2ème chute avant d'initier un bilan","D. Prescrire des cannes anglaises pour prévenir les chutes futures"]} ans={[1]}>
+A: FAUX — Erreur clinique : > 70 ans → toujours chercher un trouble sous-jacent. **B: VRAI** — Règle absolue : > 70 ans = bilan d'équilibre systématique après toute chute. C: FAUX — On n'attend pas une 2ème chute (risque ×3 après 1ère chute). D: FAUX — Cannes anglaises contre-indiquées en gériatrie (favorisent la rétropulsion).
+</QcmCard>
+
+<QcmCard n={7} type="QCM" tag="Équilibre" q="Lors du test EquiMoG, quels éléments testent le contrôle postural PROACTIF (planification/programmation) ?" opts={["A. Montée sur la pointe des pieds","B. Poussée sternale","C. Préparation du demi-tour","D. Transfert assis-debout","E. Test pied-joint / yeux ouverts / sol dur"]} ans={[0,2,3]}>
+**A: VRAI** — Pointe des pieds = programmation (anticipation du déport du CG vers l'avant). B: FAUX — Poussée sternale = contrôle postural RÉACTIF. **C: VRAI** — Préparation du ½ tour = planification (choix du mouvement type). **D: VRAI** — Transfert assis-debout = anticipation. E: FAUX — Test statique = évalue la polygo-dépendance.
+</QcmCard>
+
+<QcmCard n={8} type="QCS" tag="EquiMoG" ctx="Au test de la vitesse de marche, un patient met 4,5 secondes pour 4 mètres." q="Comment obtenir une mesure valide ?" opts={["A. Demander au patient d'aller le plus vite possible","B. Utiliser un départ et une arrivée lancés, sans dire au patient qu'il est chronométré","C. Lui indiquer les marques de départ et d'arrivée","D. Faire 3 essais et prendre la meilleure performance"]} ans={[1]}>
+A: FAUX — On mesure la vitesse SPONTANÉE, pas la vitesse de pointe. **B: VRAI** — Départ ET arrivée lancés, patient ne connaît pas les repères. C: FAUX — Connaître les repères incite à accélérer à l'approche de l'arrivée. D: FAUX — Le protocole standard = 1 passage en conditions naturelles.
+</QcmCard>
+
+<QcmCard n={9} type="QCS" tag="Aides techniques" q="Quelle aide technique est contre-indiquée chez une PA gériatrique en rétropulsion ?" opts={["A. Rollator 4 roues","B. Canne simple","C. Cannes anglaises (béquilles)","D. Rollator 2 roues"]} ans={[2]}>
+A: FAUX — Le rollator 4 roues aide à l'antépulsion. B: FAUX — La canne simple est indiquée pour le déficit d'équilibre unipodal. **C: VRAI** — Les cannes anglaises favorisent la rétropulsion → contre-indiquées chez les PA en rétropulsion (90% des PA gériatriques). D: FAUX — Rollator 2 roues = utile pour déficit antépulsion + équilibre dynamique.
+</QcmCard>
+
+<QcmCard n={10} type="QCM" tag="SPPB" q="Le SPPB évalue 3 composantes. Lesquelles ?" opts={["A. Équilibre statique","B. Force de préhension","C. Vitesse de marche sur 4 mètres","D. Lever de chaise (TAD)","E. FRT (Functional Reach Test)"]} ans={[0,2,3]}>
+**A: VRAI** — Tests d'équilibre statique (pieds joints, semi-tandem, tandem). B: FAUX — La force de préhension est un critère de Fried, pas du SPPB. **C: VRAI** — Test de vitesse de marche sur 4m. **D: VRAI** — Test de lever de chaise chronométré. E: FAUX — Le FRT est un test séparé.
+</QcmCard>
+
+<QcmCard n={11} type="QCS" tag="PTG" q="Quelle est la durée recommandée de rééducation PRÉ-opératoire avant une PTG ?" opts={["A. 3-5 séances","B. ~10 séances","C. 20 séances","D. La rééducation pré-op n'est pas recommandée"]} ans={[1]}>
+A: FAUX — Insuffisant selon les recommandations HAS. **B: VRAI** — ~10 séances recommandées (amplitudes, renforcement MI, apprentissage post-op). C: FAUX — Trop long sans base factuelle. D: FAUX — La rééducation pré-op est explicitement recommandée par la HAS.
+</QcmCard>
+
+<QcmCard n={12} type="QCS" tag="PTG" ctx="À J28 post-PTG, la flexion active du genou est de 82°." q="Quelle est la conduite à tenir ?" opts={["A. C'est dans les normes, continuer la rééducation habituelle","B. Avis chirurgical obligatoire (flexion < 90° à 4 semaines = drapeau rouge)","C. Stopper la rééducation 2 semaines","D. Augmenter uniquement les exercices de renforcement"]} ans={[1]}>
+A: FAUX — À 4 semaines, flexion < 90° = drapeau rouge. **B: VRAI** — Flexion < 90° à J28 = seuil d'alerte HAS → avis chirurgical obligatoire. C: FAUX — Le repos aggrave la perte d'amplitude. D: FAUX — Le renforcement seul ne traite pas le déficit d'amplitude articulaire.
+</QcmCard>
+
+<QcmCard n={13} type="QCM" tag="PTG" q="Quels critères CLINIQUES de sortie (HAS) doit remplir un patient après PTG pour rentrer à domicile ?" opts={["A. Douleur repos EVA < 5","B. Flexion active ≥ 70-80°","C. Flexion active ≥ 110° (pour s'asseoir sur les toilettes)","D. Transferts lit/fauteuil autonomes","E. Marche ≥ 30 mètres"]} ans={[0,1,3,4]}>
+**A: VRAI** — Critère HAS. **B: VRAI** — Critère HAS (70-80° minimum). C: FAUX — Ce n'est pas un critère de sortie HAS (bien que souhaitable à terme). **D: VRAI** — Critère HAS. **E: VRAI** — Critère HAS (avec ou sans aide technique).
+</QcmCard>
+
+<QcmCard n={14} type="QCS" tag="Dépendance iatrogène" q="Un soignant réalise du renforcement musculaire chez un PA dont l'EquiMoG révèle un déficit de programmation. Quel terme désigne cette erreur ?" opts={["A. Omission de soins","B. Soin inadapté","C. Environnement inadapté","D. Dépendance cognitive"]} ans={[1]}>
+A: FAUX — L'omission = ne pas faire ce qui doit être fait. **B: VRAI** — Soin inadapté = faire quelque chose qui ne correspond pas au déficit identifié. C: FAUX — Environnement inadapté = contexte matériel (chambre, aides inadaptées). D: FAUX — Ce n'est pas un terme nosologique reconnu ici.
+</QcmCard>
+
+<QcmCard n={15} type="QCS" tag="Fragilité" ctx="Un patient de 80 ans a 0 critère de Fried et un SPPB à 11." q="Quel objectif de rééducation/prévention ?" opts={["A. Prévenir l'entrée en dépendance (état irréversible)","B. Traiter la fragilité active","C. Maintenir l'état robuste actuel le plus longtemps possible","D. Initier un traitement de la sarcopénie"]} ans={[2]}>
+A: FAUX — Cet objectif est pertinent mais plus ciblé sur la phase de fragilité. B: FAUX — Le patient est ROBUSTE (0 critère), pas fragile. **C: VRAI** — Patient robuste → objectif = conserver l'état, prévenir la fragilisation. D: FAUX — SPPB 11 = haute performance, pas de sarcopénie détectée.
+</QcmCard>
+
+<QcmCard n={16} type="QCS" tag="Cas clinique" ctx="Mme B., 90 ans, PTG J2." q="Objectif opérationnel principal concernant le quadriceps ?" opts={["A. Testing musculaire ≥ 4/5","B. Contraction volontaire visible","C. Renforcement en chaîne fermée uniquement","D. Isométrique à 0° d'extension uniquement"]} ans={[1]}>
+A: FAUX — À J2, l'objectif est plus basique : réveiller le quad. **B: VRAI** — À J2, l'objectif réaliste est d'obtenir une contraction volontaire visible du quadriceps. C: FAUX — Les deux types de chaîne peuvent être utilisés selon la douleur. D: FAUX — Trop restrictif, on peut travailler sur différents angles.
+</QcmCard>
+
+<QcmCard n={17} type="QCM" tag="SDPM" q="Quels sont les signes cliniques évocateurs d'un SDPM ?" opts={["A. Rétropulsion du tronc","B. Marche désorganisée","C. Flessum de hanche bilatéral > 30°","D. Projection vers l'arrière","E. Peur du vide antérieur"]} ans={[0,1,3,4]}>
+**A: VRAI** — La rétropulsion est le signe cardinal du SDPM. **B: VRAI** — La désorganisation du mouvement est un signe de SDPM. C: FAUX — Le flessum de hanche important n'est pas spécifique du SDPM. **D: VRAI** — Projection vers l'arrière = réaction posturale anormale. **E: VRAI** — La peur du vide antérieur est très fréquente dans le SDPM.
+</QcmCard>
+
+<QcmCard n={18} type="QCS" tag="Équilibre" ctx="FRT = 15 cm chez une PA de 78 ans." q="Quelle interprétation est correcte ?" opts={["A. Performance normale pour cet âge","B. Légèrement diminuée mais sans signification clinique","C. Peur du vide antérieur objectivée, risque de chute élevé","D. Signe de sarcopénie sévère"]} ans={[2]}>
+A: FAUX — La norme est 26 cm. B: FAUX — < 20 cm = seuil pathologique cliniquement significatif. **C: VRAI** — FRT < 20 cm = peur du vide antérieur objectivée (norme 26 cm). D: FAUX — Le FRT n'évalue pas la sarcopénie.
+</QcmCard>
+
+<QcmCard n={19} type="QCS" tag="Chute" ctx="Un patient de 75 ans a chuté 3 fois en 12 mois." q="Comment le classe-t-on ?" opts={["A. Chuteur accidentel","B. Chuteur occasionnel","C. Chuteur à répétition","D. Chuteur à risque modéré"]} ans={[2]}>
+A: FAUX — Chuteur accidentel = cas isolé. B: FAUX — Chuteur occasionnel = < 2 chutes / 12 mois. **C: VRAI** — ≥ 2 chutes / 12 mois = chuteur à répétition → bilan complet urgent. D: FAUX — Ce terme n'est pas dans la classification des 3 types de chuteurs.
+</QcmCard>
+
+<QcmCard n={20} type="QCS" tag="EBP" q="L'EBP (Evidence Based Practice) en kinésithérapie repose sur 3 piliers. Lequel est correct ?" opts={["A. Preuve scientifique uniquement","B. Expérience du thérapeute + preuve scientifique + projet du patient","C. Preuve scientifique + recommandations HAS + avis médical","D. Expérience clinique + intuition + preuve scientifique"]} ans={[1]}>
+A: FAUX — L'EBP n'est PAS que la preuve scientifique. **B: VRAI** — Les 3 piliers : expérience clinique + preuve scientifique + état bio-psycho-social du patient (dont son projet). C: FAUX — Les reco HAS = preuve scientifique, l'avis médical n'est pas un pilier. D: FAUX — L'intuition ne fait pas partie des piliers de l'EBP.
+</QcmCard>
+
+<QcmCard n={21} type="QCS" tag="Cas clinique" ctx="Mme B. (90 ans, PTG) veut retourner jardiner, conduire et faire ses courses." q="Quel impact cela a-t-il sur la PEC ?" opts={["A. Aucun, le protocole PTG standard s'applique à tous","B. Ces objectifs sont trop ambitieux à 90 ans, on les revoit à la baisse","C. Ces projets orientent TOUTE la PEC : objectifs fonctionnels ambitieux, PEC individualisée","D. On applique le protocole gériatrique standard car l'âge prime"]} ans={[2]}>
+A: FAUX — Le projet du patient individualise TOUJOURS la PEC. B: FAUX — L'âgisme est à éviter. 90 ans peut être très fonctionnel. **C: VRAI** — Le projet patient oriente TOUTE la PEC. Mme B. est très active → PEC ambitieuse et individualisée. D: FAUX — L'âge ne définit pas la personne.
+</QcmCard>
+
+<QcmCard n={22} type="QCM" tag="ICOPE" q="L'ICOPE est indiqué pour quels patients ?" opts={["A. PA > 60 ans autonomes (robustes)","B. PA fragiles","C. PA dépendants","D. À distance d'une pathologie aiguë","E. En phase hospitalière aiguë"]} ans={[0,1,3]}>
+**A: VRAI** — ICOPE pour patients robustes (dépistage précoce). **B: VRAI** — ICOPE pour patients fragiles. C: FAUX — ICOPE ne s'applique PAS aux patients dépendants. **D: VRAI** — ICOPE à réaliser À DISTANCE d'une pathologie aiguë. E: FAUX — ICOPE ne se fait pas en phase hospitalière aiguë.
+</QcmCard>
+
+<QcmCard n={23} type="QCS" tag="Dépendance iatrogène" ctx="Un soignant installe systématiquement des barrières de lit pour 'sécuriser' une PA fragile." q="Quel risque cela comporte-t-il ?" opts={["A. Aucun, c'est une mesure de sécurité standard","B. Dépendance iatrogène par environnement inadapté","C. Risque juridique pour le soignant","D. SDPM par mauvaise position nocturne"]} ans={[1]}>
+A: FAUX — La sécurité à tout prix = asepsie fonctionnelle = erreur. **B: VRAI** — Surprotection = environnement inadapté = dépendance iatrogène. Le patient ne peut plus se mobiliser, perd ses capacités. C: FAUX — Cliniquement délétère malgré l'aspect 'sécurisé'. D: FAUX — Le SDPM a d'autres causes.
+</QcmCard>
+
+<QcmCard n={24} type="QCS" tag="PTG" q="Technique recommandée Grade A pour le contrôle de la douleur et de l'œdème dès J2 post-PTG ?" opts={["A. NMES (stimulation neuromusculaire)","B. Cryothérapie","C. Ultrasons","D. Balnéothérapie"]} ans={[1]}>
+A: FAUX — NMES est recommandée à partir de J15 pour le quadriceps. **B: VRAI** — Cryothérapie Grade A : réduit douleur, inflammation et épanchement dès J2. C: FAUX — Non mentionné dans les recommandations HAS PTG. D: FAUX — Pas dans les recommandations HAS pour cette phase.
+</QcmCard>
+
+<QcmCard n={25} type="QCS" tag="Raisonnement" q="Quel test évalue spécifiquement l'AUTONOMIE EN CHAMBRE chez une PA ?" opts={["A. TUG","B. SPPB","C. TMM (Test Moteur Minimum)","D. FRT"]} ans={[2]}>
+A: FAUX — TUG = autonomie HORS chambre. B: FAUX — SPPB = fragilité globale. **C: VRAI** — TMM = Test Moteur Minimum, évalue l'autonomie EN chambre (20 items, décubitus → marche). D: FAUX — FRT = stabilité posturale et peur du vide antérieur.
+</QcmCard>
+
+<QcmCard n={26} type="QCS" tag="Cas clinique" ctx="Mme B. PTG J2, EN repos 6/10, flessum 15°." q="Quel objectif articulaire est PRIORITAIRE à J2 ?" opts={["A. Flexion ≥ 90°","B. Extension proche de 0° (réduire le flessum)","C. Flexion ≥ 70° pour sortie SSR","D. Valgus anatomique restauré"]} ans={[1]}>
+A: FAUX — Flexion ≥ 90° est l'objectif de J15. **B: VRAI** — À J2, l'extension (réduire le flessum) est prioritaire pour la marche et prévenir les complications. Objectif : proche de 0°. C: FAUX — Flexion ≥ 70-80° est le critère de sortie, pas un objectif J2. D: FAUX — Le valgus physiologique supprimé lors de la PTG est un fait chirurgical, pas un objectif kiné.
+</QcmCard>
+
+<QcmCard n={27} type="QCM" tag="Cas clinique" ctx="Mme B., 90 ans, PTG J15, envisage un retour à domicile. Sa maison est à l'étage." q="Quels critères cliniques HAS sont OBLIGATOIRES à vérifier ?" opts={["A. Douleur repos EVA < 5","B. Flexion ≥ 70-80°","C. Flexion ≥ 110° (WC)","D. Transferts lit/fauteuil autonomes","E. Escaliers"]} ans={[0,1,3,4]}>
+**A: VRAI** — Critère HAS de sortie. **B: VRAI** — Critère HAS de sortie. C: FAUX — Ce n'est pas un critère HAS de sortie. **D: VRAI** — Critère HAS de sortie. **E: VRAI** — OBLIGATOIRE pour Mme B. car maison à l'étage.
+</QcmCard>
+
+<QcmCard n={28} type="QCS" tag="Fragilité" ctx="SPPB = 5." q="Quelle interprétation ?" opts={["A. Haute performance, pas de risque","B. Performance intermédiaire, surveiller","C. Faible performance, risque élevé de perte d'autonomie","D. Performance très faible, patient dépendant"]} ans={[2]}>
+A: FAUX — 10-12 = haute performance. B: FAUX — 7-9 = performance intermédiaire. **C: VRAI** — SPPB 4-6 = faible performance → surveillance nécessaire. D: FAUX — SPPB 0-3 = très faible performance.
+</QcmCard>
+
+<QcmCard n={29} type="QCS" tag="Raisonnement" ctx="Un patient vous est adressé pour 'marche'." q="Sans lire le reste du billet, quelle est votre 1ère question en séance ?" opts={["A. Quel est votre score au TUG ?","B. Quel est votre projet, qu'est-ce que vous voulez pouvoir faire ?","C. Avez-vous déjà chuté ?","D. Quelle est votre vitesse de marche ?"]} ans={[1]}>
+A: FAUX — Le TUG vient après avoir défini le projet. **B: VRAI** — Le PROJET du patient est la base du diagnostic kinésithérapique (modèle T-pro). Tout découle de là. C: FAUX — L'EVS est important mais vient après le projet. D: FAUX — La VM est un test, pas le point de départ de la relation thérapeutique.
+</QcmCard>
+
+<QcmCard n={30} type="QCS" tag="Raisonnement" ctx="Lors du transfert assis-debout à l'EquiMoG, le patient ne recule pas les pieds et se lève 'en bloc'." q="Quelle phase est atteinte et quelle rééducation ?" opts={["A. Exécution → Renforcement quadriceps","B. Programmation → Exercices rapides et aléatoires","C. Planification → Puzzle moteur, répétition volontaire du geste","D. Idéation → Sollicitation verbale"]} ans={[2]}>
+A: FAUX — Le déficit n'est pas musculaire mais de planification du mouvement. B: FAUX — La programmation concerne l'anticipation rapide, pas le pattern de mouvement. **C: VRAI** — Ne pas reculer les pieds = déficit de planification du mouvement type. Rééducation : répétition volontaire et séquencée du transfert (puzzle moteur). D: FAUX — Le patient a l'idée de se lever (idéation préservée).
+</QcmCard>
+
+</Section>

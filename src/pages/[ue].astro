@@ -1,0 +1,361 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const modules = import.meta.glob('../content/*.mdx');
+  const paths = [];
+  for (const [path, load] of Object.entries(modules)) {
+    const slug = path.split('/').pop()!.replace('.mdx', '');
+    if (slug.startsWith('_')) continue;
+    const mod = await load() as any;
+    paths.push({
+      params: { ue: slug },
+      props: { frontmatter: mod.frontmatter ?? {} }
+    });
+  }
+  return paths;
+}
+
+const { ue } = Astro.params;
+const { frontmatter } = Astro.props;
+
+const {
+  title = ue,
+  color = 'c1',
+  coursNav = [] as { id: string; label: string }[],
+  fichesNav = [] as { id: string; label: string }[]
+} = frontmatter;
+
+const allMdx = import.meta.glob('../content/*.mdx', { eager: true }) as Record<string, any>;
+const Content = allMdx[`../content/${ue}.mdx`]?.default;
+
+const firstCours = coursNav[0]?.id ?? '';
+const firstFiche = fichesNav[0]?.id ?? '';
+const defaultTab = coursNav.length > 0 ? 'cours' : fichesNav.length > 0 ? 'fiches' : 'flashcards';
+---
+<Layout title={title} lang="fr">
+
+<div class="ue-header">
+  <a href="/" class="back-link">← Accueil</a>
+  <h1>{title}</h1>
+</div>
+
+<div class="tab-nav">
+  {coursNav.length > 0 && <button class={`tab-btn${defaultTab === 'cours' ? ' active' : ''}`} data-tab="cours">📚 Cours</button>}
+  {fichesNav.length > 0 && <button class={`tab-btn${defaultTab === 'fiches' ? ' active' : ''}`} data-tab="fiches">📋 Fiches</button>}
+  <button class="tab-btn" data-tab="flashcards">🃏 Flashcards</button>
+  <button class="tab-btn" data-tab="qcm">📝 QCM</button>
+</div>
+
+<div class="sub-nav" id="subNav" style="display:none">
+  {coursNav.map((item: { id: string; label: string }) => (
+    <button class="sub-btn" data-section={item.id} data-group="cours">{item.label}</button>
+  ))}
+  {fichesNav.map((item: { id: string; label: string }) => (
+    <button class="sub-btn" data-section={item.id} data-group="fiches">{item.label}</button>
+  ))}
+</div>
+
+{/* All MDX content rendered once; JS controls visibility */}
+<div id="mdx-root">
+  <Content />
+</div>
+
+</Layout>
+
+<style>
+  .ue-header { padding: 16px 0 8px; }
+  .back-link { font-size: 13px; color: var(--mu); text-decoration: none; display: inline-block; margin-bottom: 8px; }
+  .back-link:hover { color: var(--c1); }
+  .ue-header h1 { font-size: 22px; font-weight: 700; color: var(--tx); margin: 0; }
+
+  .tab-nav {
+    display: flex;
+    gap: 4px;
+    border-bottom: 2px solid var(--bd);
+    margin: 16px 0 0;
+  }
+  .tab-btn {
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--mu);
+    cursor: pointer;
+    margin-bottom: -2px;
+    border-radius: 6px 6px 0 0;
+    transition: color .15s, border-color .15s;
+  }
+  .tab-btn:hover { color: var(--tx); }
+  .tab-btn.active { color: var(--c1); border-bottom-color: var(--c1); background: color-mix(in srgb, var(--c1) 8%, transparent); }
+
+  .sub-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--bd);
+    margin-bottom: 12px;
+    align-items: center;
+  }
+  .sub-btn {
+    background: var(--s1);
+    border: 1px solid var(--bd);
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 12px;
+    color: var(--tx);
+    cursor: pointer;
+    transition: background .15s, color .15s;
+  }
+  .sub-btn:hover { background: var(--s2); }
+  .sub-btn.active { background: var(--c1); border-color: var(--c1); color: #fff; }
+
+  /* All sections hidden by default; JS adds .visible */
+  :global(#mdx-root .sub-section) { display: none; }
+  :global(#mdx-root .sub-section.visible) { display: block; }
+
+  /* ── Flashcard player ── */
+  :global(#fc-player) { max-width: 680px; margin: 0 auto 16px; }
+  :global(#fc-fil) { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+  :global(#fc-info) { font-size: 12px; color: var(--mu); display: flex; gap: 14px; margin-bottom: 8px; }
+  :global(#fc-bar) { height: 5px; background: var(--s2); border-radius: 3px; margin-bottom: 14px; }
+  :global(#fc-fill) { height: 100%; background: var(--c2); border-radius: 3px; transition: width .3s; width: 0; }
+  :global(#fc-card) {
+    background: var(--s1);
+    border: 2px solid var(--bd);
+    border-radius: 14px;
+    min-height: 190px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 28px 22px;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color .15s, transform .12s;
+    margin-bottom: 12px;
+    gap: 0;
+  }
+  :global(#fc-card:hover) { border-color: var(--c3); transform: translateY(-2px); }
+  :global(#fc-q) { font-size: 15px; font-weight: 600; color: var(--c3); line-height: 1.55; }
+  :global(#fc-a) { display: none; font-size: 13px; line-height: 1.7; color: var(--tx); }
+  :global(#fc-card.fc-fl #fc-q) { display: none; }
+  :global(#fc-card.fc-fl #fc-a) { display: block; }
+  :global(#fc-hint) { font-size: 11px; color: var(--mu); margin-top: 12px; }
+  :global(#fc-card.fc-fl #fc-hint) { display: none; }
+  :global(#fc-btns) { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+  :global(.fc-btn) { padding: 7px 16px; border-radius: 7px; border: none; cursor: pointer; font-size: 13px; font-weight: 700; transition: opacity .15s; }
+  :global(.fc-btn:hover) { opacity: .82; }
+  :global(.fc-brev) { background: var(--c4); color: #fff; }
+  :global(.fc-bok) { background: var(--c2); color: #000; }
+  :global(.fc-bnxt) { background: var(--c1); color: #fff; }
+  :global(.fc-bmix) { background: var(--s2); color: var(--tx); border: 1px solid var(--bd) !important; }
+  :global(.fc-on) { background: var(--c1) !important; color: #fff !important; border-color: var(--c1) !important; }
+
+</style>
+
+<script define:vars={{ firstCours, firstFiche, defaultTab }}>
+  const root = document.getElementById('mdx-root');
+  const subNav = document.getElementById('subNav');
+  const tabBtns = document.querySelectorAll('.tab-btn');
+
+  // ── Section visibility ──
+  function hideAll() {
+    root.querySelectorAll('.sub-section').forEach(s => s.classList.remove('visible'));
+  }
+  function showSection(id) {
+    hideAll();
+    const el = root.querySelector('[id="' + id + '"]');
+    if (el) el.classList.add('visible');
+  }
+  function activateSubBtn(id) {
+    subNav.querySelectorAll('.sub-btn').forEach(b => b.classList.toggle('active', b.dataset.section === id));
+  }
+
+  // ── Sub-nav: show only buttons for the active group ──
+  function showSubNav(group) {
+    subNav.querySelectorAll('.sub-btn').forEach(btn => {
+      btn.style.display = btn.dataset.group === group ? '' : 'none';
+    });
+    subNav.style.display = 'flex';
+  }
+
+  subNav.querySelectorAll('.sub-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      activateSubBtn(btn.dataset.section);
+      showSection(btn.dataset.section);
+    });
+  });
+
+  // ── Tab clicks ──
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const tab = btn.dataset.tab;
+      if (tab === 'cours') {
+        showSubNav('cours');
+        const cur = subNav.querySelector('.sub-btn[data-group="cours"].active');
+        const id = cur?.dataset.section ?? firstCours;
+        activateSubBtn(id);
+        showSection(id);
+      } else if (tab === 'fiches') {
+        showSubNav('fiches');
+        const cur = subNav.querySelector('.sub-btn[data-group="fiches"].active');
+        const id = cur?.dataset.section ?? firstFiche;
+        activateSubBtn(id);
+        showSection(id);
+      } else if (tab === 'flashcards') {
+        subNav.style.display = 'none';
+        showSection('flashcards');
+        initFlashcards();
+      } else if (tab === 'qcm') {
+        subNav.style.display = 'none';
+        showSection('qcm');
+        initQCM();
+      }
+    });
+  });
+
+  // ── Init ──
+  if (defaultTab === 'cours' && firstCours) {
+    showSubNav('cours');
+    activateSubBtn(firstCours);
+    showSection(firstCours);
+  } else if (defaultTab === 'fiches' && firstFiche) {
+    showSubNav('fiches');
+    activateSubBtn(firstFiche);
+    showSection(firstFiche);
+  } else if (defaultTab === 'flashcards') {
+    subNav.style.display = 'none';
+    showSection('flashcards');
+    initFlashcards();
+  }
+
+  // ── Flashcard player ──
+  let fcItems = [], fcDeck = [], fcIdx = 0, fcStatus = {}, fcBuilt = false;
+
+  function initFlashcards() {
+    if (fcBuilt) return;
+    fcBuilt = true;
+    const section = root.querySelector('[id="flashcards"]');
+    if (!section) return;
+
+    fcItems = [...section.querySelectorAll('.fc-item')].map((el, i) => ({
+      theme: el.dataset.theme,
+      ctx: el.dataset.ctx || '',
+      q: el.dataset.q,
+      a: el.querySelector('.fc-answer')?.innerHTML ?? '',
+    }));
+    if (!fcItems.length) return;
+
+    const themes = [...new Set(fcItems.map(c => c.theme))];
+    const filterBtns = ['<button class="fc-btn fc-bmix fc-on" data-theme="all">Tous</button>',
+      ...themes.map(th => `<button class="fc-btn fc-bmix" data-theme="${th}">${th}</button>`)
+    ].join('');
+
+    const player = document.createElement('div');
+    player.id = 'fc-player';
+    player.innerHTML = `
+      <div id="fc-fil">${filterBtns}</div>
+      <div id="fc-info">
+        <span>Carte <span id="fc-n">1</span>/<span id="fc-t">0</span></span>
+        <span>✅ <span id="fc-ok">0</span> sus</span>
+        <span>🔁 <span id="fc-rv">0</span> à revoir</span>
+      </div>
+      <div id="fc-bar"><div id="fc-fill"></div></div>
+      <div id="fc-card">
+        <div id="fc-q"></div>
+        <div id="fc-a"></div>
+        <div id="fc-hint">👆 Cliquer pour voir la réponse</div>
+      </div>
+      <div id="fc-btns">
+        <button class="fc-btn fc-brev">🔁 À revoir</button>
+        <button class="fc-btn fc-bok">✅ Su !</button>
+        <button class="fc-btn fc-bnxt">⏭ Suivant</button>
+      </div>
+    `;
+    section.insertBefore(player, section.firstChild);
+
+    document.getElementById('fc-card').addEventListener('click', flipFC);
+    player.querySelector('.fc-brev').addEventListener('click', () => markFC('rev'));
+    player.querySelector('.fc-bok').addEventListener('click', () => markFC('ok'));
+    player.querySelector('.fc-bnxt').addEventListener('click', nextFC);
+    document.getElementById('fc-fil').querySelectorAll('.fc-bmix').forEach(btn => {
+      btn.addEventListener('click', e => {
+        document.getElementById('fc-fil').querySelectorAll('.fc-bmix').forEach(b => b.classList.remove('fc-on'));
+        e.currentTarget.classList.add('fc-on');
+        filterFC(e.currentTarget.dataset.theme);
+      });
+    });
+
+    filterFC('all');
+  }
+
+  function filterFC(theme) {
+    fcDeck = fcItems.map((_, i) => i).filter(i => theme === 'all' || fcItems[i].theme === theme);
+    fcIdx = 0;
+    showFC();
+  }
+  function showFC() {
+    if (!fcDeck.length) return;
+    const c = fcItems[fcDeck[fcIdx]];
+    document.getElementById('fc-q').textContent = c.q;
+    document.getElementById('fc-a').innerHTML = c.a;
+    document.getElementById('fc-card').classList.remove('fc-fl');
+    document.getElementById('fc-n').textContent = fcIdx + 1;
+    document.getElementById('fc-t').textContent = fcDeck.length;
+    const ok = Object.values(fcStatus).filter(v => v === 'ok').length;
+    const rv = Object.values(fcStatus).filter(v => v === 'rev').length;
+    document.getElementById('fc-ok').textContent = ok;
+    document.getElementById('fc-rv').textContent = rv;
+    document.getElementById('fc-fill').style.width = (ok / fcItems.length * 100) + '%';
+  }
+  function flipFC() { document.getElementById('fc-card').classList.toggle('fc-fl'); }
+  function markFC(status) { fcStatus[fcDeck[fcIdx]] = status; nextFC(); }
+  function nextFC() { fcIdx = (fcIdx + 1) % fcDeck.length; showFC(); }
+
+  // ── QCM (per-question submit) ──
+  let qcmBuilt = false;
+
+  function initQCM() {
+    if (qcmBuilt) return;
+    qcmBuilt = true;
+    const section = root.querySelector('[id="qcm"]');
+    if (!section) return;
+
+    section.querySelectorAll('.qst').forEach(card => {
+      const btn = card.querySelector('.qst-submit-btn');
+      if (!btn) return;
+      btn.addEventListener('click', () => submitCard(card, btn));
+    });
+  }
+
+  function submitCard(card, btn) {
+    const ans = JSON.parse(card.dataset.ans);
+    const inputs = [...card.querySelectorAll('.qst-input')];
+    const selected = inputs.filter(i => i.checked).map(i => parseInt(i.value));
+    const correct = ans.length === selected.length && ans.every(a => selected.includes(a));
+
+    inputs.forEach(input => {
+      input.disabled = true;
+      const li = input.closest('.qst-opt');
+      const idx = parseInt(input.value);
+      if (ans.includes(idx)) li.classList.add('qst-ok');
+      else if (input.checked) li.classList.add('qst-wrong');
+    });
+
+    const expl = card.querySelector('.qst-expl');
+    if (expl) { expl.style.display = ''; expl.open = true; }
+
+    const marker = document.createElement('span');
+    marker.className = 'qst-result';
+    marker.textContent = correct ? '✅' : '❌';
+    card.querySelector('.qst-hd').appendChild(marker);
+
+    btn.disabled = true;
+  }
+</script>

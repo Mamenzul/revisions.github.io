@@ -1,0 +1,140 @@
+---
+interface Props {
+  n: number;
+  type: 'QCS' | 'QCM';
+  tag: string;
+  ctx?: string;
+  q: string;
+  opts: string[];
+  ans: number[];
+}
+const { n, type, tag, ctx, q, opts, ans } = Astro.props;
+const inputType = type === 'QCS' ? 'radio' : 'checkbox';
+const groupName = `q${n}`;
+---
+<div class="qst" data-type={type} data-ans={JSON.stringify(ans)}>
+  <div class="qst-hd">
+    <span class="qst-num">Q{n}</span>
+    <span class={`badge badge-${type === 'QCS' ? 'amber' : 'blue'}`}>{type}</span>
+    <span class="badge badge-gray">{tag}</span>
+  </div>
+  {ctx && <div class="qst-ctx">{ctx}</div>}
+  <div class="qst-q">{q}</div>
+  <ul class="qst-opts">
+    {opts.map((opt, i) => (
+      <li class="qst-opt" data-idx={i}>
+        <label class="qst-label">
+          <input type={inputType} name={groupName} value={String(i)} class="qst-input" />
+          {opt}
+        </label>
+      </li>
+    ))}
+  </ul>
+  <div class="qst-actions">
+    <button class="qst-submit-btn">✔ Valider</button>
+  </div>
+  <details class="qst-expl" style="display:none">
+    <summary>Explication</summary>
+    <div class="qst-expl-body"><slot /></div>
+  </details>
+</div>
+
+<style>
+  .qst {
+    background: var(--s2);
+    border: 1px solid var(--bd);
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+  }
+  .qst-hd {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 8px;
+  }
+  .qst-num {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--mu);
+  }
+  .qst-ctx {
+    font-size: 12px;
+    color: var(--mu);
+    font-style: italic;
+    margin-bottom: 6px;
+    padding: 6px 10px;
+    background: var(--bg);
+    border-radius: 6px;
+    border-left: 2px solid var(--c3);
+  }
+  .qst-q {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--tx);
+    margin-bottom: 8px;
+  }
+  .qst-opts {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .qst-opt {
+    border-radius: 6px;
+    transition: background .1s;
+  }
+  .qst-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 13px;
+    padding: 6px 8px;
+    cursor: pointer;
+    border-radius: 6px;
+    color: var(--tx);
+  }
+  .qst-label:hover { background: var(--s1); }
+  .qst-input { margin-top: 2px; flex-shrink: 0; cursor: pointer; accent-color: var(--c1); }
+
+  /* Revealed after submit */
+  .qst-opt.qst-ok .qst-label { background: color-mix(in srgb, var(--c2) 15%, transparent); color: var(--tx); font-weight: 600; cursor: default; }
+  .qst-opt.qst-wrong .qst-label { background: color-mix(in srgb, var(--c4) 15%, transparent); color: var(--tx); cursor: default; }
+
+  .qst-result { margin-left: auto; font-size: 14px; }
+  .qst-actions { margin: 6px 0 4px; }
+  .qst-submit-btn {
+    padding: 5px 14px;
+    background: var(--c1);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .qst-submit-btn:hover { opacity: .85; }
+  .qst-submit-btn:disabled { opacity: .4; cursor: default; }
+
+  .qst-expl summary {
+    cursor: pointer;
+    font-size: 12px;
+    color: var(--c1);
+    font-weight: 600;
+    padding: 4px 0;
+    user-select: none;
+  }
+  .qst-expl[open] summary { color: var(--c3); }
+  .qst-expl-body {
+    margin-top: 6px;
+    padding: 8px 10px;
+    background: var(--bg);
+    border-left: 3px solid var(--c3);
+    border-radius: 0 6px 6px 0;
+    font-size: 12px;
+    color: var(--tx);
+    line-height: 1.6;
+  }
+</style>

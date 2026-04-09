@@ -1,0 +1,211 @@
+---
+# ─── UE IDENTITY ───────────────────────────────────────────────────────────────
+title: "UExx — Titre de l'UE"
+color: "c1"                     # c1 | c2 | c3 | c4
+
+# ─── NAV ────────────────────────────────────────────────────────────────────────
+# Each id must match a <Section id="..."> below.
+# coursNav  → "📚 Cours" tab
+# fichesNav → "📋 Fiches" tab
+coursNav:
+  - { id: "c-intro", label: "Introduction" }
+  - { id: "c-physio", label: "Physiologie" }
+
+fichesNav:
+  - { id: "f-clinique", label: "Fiche clinique" }
+---
+
+{/* ── IMPORTS (always needed) ─────────────────────────────────────── */}
+import Section   from '../components/Section.astro';
+import Card      from '../components/Card.astro';
+import AlertBox  from '../components/AlertBox.astro';
+import Grid2     from '../components/Grid2.astro';
+import Grid3     from '../components/Grid3.astro';
+import MiniCard  from '../components/MiniCard.astro';
+import Badge     from '../components/Badge.astro';
+import Grade     from '../components/Grade.astro';
+import Tree      from '../components/Tree.astro';
+import FlashCard from '../components/FlashCard.astro';
+import QcmCard   from '../components/QcmCard.astro';
+
+{/* ══════════════════════════════════════════════════════════════════
+    COURS — c-intro
+    Every cours/fiche is a <Section id="..."> that wraps <Card>s.
+════════════════════════════════════════════════════════════════════ */}
+<Section id="c-intro">
+
+<Card title="Titre de la card">
+
+Texte libre en **markdown** dans la card.
+
+<table>
+<thead><tr><th>Colonne A</th><th>Colonne B</th></tr></thead>
+<tbody>
+<tr><td>Valeur 1</td><td>Résultat 1</td></tr>
+<tr><td>Valeur 2</td><td>Résultat 2</td></tr>
+</tbody>
+</table>
+
+{/* AlertBox types: info | key | trap | danger | has | ok */}
+<AlertBox type="key">Point clé à retenir.</AlertBox>
+<AlertBox type="trap">Piège classique aux examens.</AlertBox>
+<AlertBox type="danger">Urgence / contre-indication.</AlertBox>
+<AlertBox type="has">Recommandation HAS.</AlertBox>
+<AlertBox type="ok">Bon pronostic / élément positif.</AlertBox>
+
+</Card>
+
+<Card title="Mise en page avancée">
+
+{/* Grid2 / Grid3 : colonnes côte à côte */}
+<Grid2>
+  <div>
+    <Badge color="green">Favorable</Badge>
+    Contenu colonne gauche.
+  </div>
+  <div>
+    <Badge color="red">Défavorable</Badge>
+    Contenu colonne droite.
+  </div>
+</Grid2>
+
+<Grid3>
+  <div><Badge color="blue">A</Badge> Premier tiers.</div>
+  <div><Badge color="amber">B</Badge> Deuxième tiers.</div>
+  <div><Badge color="teal">C</Badge> Troisième tiers.</div>
+</Grid3>
+
+{/* MiniCard : chiffre / stat mis en valeur */}
+<Grid3>
+  <MiniCard val="70%" label="Seuil de validation" />
+  <MiniCard val="≥ 2" label="Critères requis" />
+  <MiniCard val="< 12s" label="Norme TUG" />
+</Grid3>
+
+{/* Grade : niveau de preuve  a | b | c */}
+<Grade level="a" /> Traitement de référence.
+
+{/* Tree : arbre décisionnel monospace */}
+<Tree>
+Symptôme X
+├── Signe A → Diagnostic 1
+│   └── Traitement A1
+└── Signe B → Diagnostic 2
+    └── Traitement B2
+</Tree>
+
+</Card>
+
+</Section>
+
+{/* ══════════════════════════════════════════════════════════════════
+    COURS — c-physio
+════════════════════════════════════════════════════════════════════ */}
+<Section id="c-physio">
+
+<Card title="Physiologie — exemple minimal">
+
+- Point 1
+- Point 2
+- Point 3
+
+<AlertBox type="info">Rappel anatomique utile ici.</AlertBox>
+
+</Card>
+
+</Section>
+
+{/* ══════════════════════════════════════════════════════════════════
+    FICHE — f-clinique
+════════════════════════════════════════════════════════════════════ */}
+<Section id="f-clinique">
+
+<Card title="Fiche synthèse — Cas clinique type">
+
+<table>
+<thead><tr><th>Critère</th><th>Valeur</th></tr></thead>
+<tbody>
+<tr><td>Âge moyen</td><td>72 ans</td></tr>
+<tr><td>Terrain</td><td>Polymédiqué, sédentaire</td></tr>
+</tbody>
+</table>
+
+<AlertBox type="trap">Ne pas confondre A et B.</AlertBox>
+
+</Card>
+
+</Section>
+
+{/* ══════════════════════════════════════════════════════════════════
+    FLASHCARDS
+    id must be exactly "flashcards".
+    theme  → filter button label (group cards by topic)
+    ctx    → optional italic context line (optional prop)
+    q      → question text (shown on front of card)
+    slot   → answer (revealed on flip, can contain markdown/HTML)
+════════════════════════════════════════════════════════════════════ */}
+<Section id="flashcards">
+
+<FlashCard theme="Intro" q="Quelle est la définition de l'autonomie ?">
+  Capacité de **décision** (libre arbitre), distincte de l'indépendance (capacité d'action physique).
+</FlashCard>
+
+<FlashCard theme="Intro" ctx="Contexte : PA à domicile" q="Quel seuil définit la fragilité selon Fried ?">
+  ≥ 3 critères sur 5 : perte de poids, fatigue, faiblesse, lenteur, sédentarité.
+</FlashCard>
+
+<FlashCard theme="Physio" q="Quels sont les 3 systèmes de l'équilibre ?">
+  1. Vestibulaire — 2. Visuel — 3. Proprioceptif (somatosensoriel).
+</FlashCard>
+
+</Section>
+
+{/* ══════════════════════════════════════════════════════════════════
+    QCM
+    id must be exactly "qcm".
+    n    → question number (integer, used for radio group name)
+    type → "QCS" (single correct) | "QCM" (multiple correct)
+    tag  → category label shown as gray badge
+    ctx  → optional italic context (optional prop)
+    q    → question text
+    opts → array of answer strings (include "A. " prefix in text)
+    ans  → array of 0-based indices of correct answers
+    slot → explanation shown after submit
+════════════════════════════════════════════════════════════════════ */}
+<Section id="qcm">
+
+<QcmCard
+  n={1}
+  type="QCS"
+  tag="Définitions"
+  q="Parmi les propositions suivantes, laquelle définit l'INDÉPENDANCE ?"
+  opts={[
+    "A. Capacité de décision autonome",
+    "B. Capacité d'action physique sans aide tierce",
+    "C. Absence de pathologie chronique",
+    "D. Score ADL ≥ 5/6"
+  ]}
+  ans={[1]}
+>
+  L'indépendance désigne la capacité d'**action physique** sans aide. L'autonomie désigne la capacité de **décision**.
+</QcmCard>
+
+<QcmCard
+  n={2}
+  type="QCM"
+  tag="Fragilité"
+  ctx="Patient 68 ans, perte de 5 kg en 6 mois, marche lente, fatigue chronique."
+  q="Quels critères de Fried sont présents ? (plusieurs réponses)"
+  opts={[
+    "A. Perte de poids involontaire",
+    "B. Faiblesse musculaire",
+    "C. Fatigue / épuisement",
+    "D. Lenteur à la marche",
+    "E. Sédentarité"
+  ]}
+  ans={[0, 2, 3]}
+>
+  A (perte 5 kg), C (fatigue chronique) et D (marche lente) sont explicitement décrits. B et E ne sont pas mentionnés dans le cas.
+</QcmCard>
+
+</Section>

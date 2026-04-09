@@ -1,0 +1,1584 @@
+---
+title: "UE18 — Gériatrie"
+color: "c2"
+fichesNav:
+  - { id: "f-chutes", label: "Chutes & Équilibre" }
+  - { id: "f-desadapt", label: "Désadaptation" }
+  - { id: "f-denut", label: "Dénutrition" }
+  - { id: "f-cognitif", label: "Cognitif / Alzheimer" }
+  - { id: "f-depend", label: "Dépendance / ADL" }
+  - { id: "f-pied", label: "Pied PA" }
+  - { id: "f-iu", label: "Incontinence" }
+coursNav:
+  - { id: "c-chutes", label: "Chutes & Ostéoporose" }
+  - { id: "c-desadapt", label: "Désadaptation" }
+  - { id: "c-denut", label: "Vieillissement & Dénutrition" }
+  - { id: "c-depend", label: "Autonomie & Dépendance" }
+  - { id: "c-iu", label: "Incontinence" }
+  - { id: "c-pied", label: "Pied PA" }
+  - { id: "c-onco", label: "Oncologie" }
+  - { id: "c-palliatif", label: "Soins Palliatifs" }
+  - { id: "c-douleur", label: "Douleur" }
+---
+import Section from '../components/Section.astro';
+import Card from '../components/Card.astro';
+import AlertBox from '../components/AlertBox.astro';
+import Grid2 from '../components/Grid2.astro';
+import Grid3 from '../components/Grid3.astro';
+import MiniCard from '../components/MiniCard.astro';
+import Badge from '../components/Badge.astro';
+import FlashCard from '../components/FlashCard.astro';
+import QcmCard from '../components/QcmCard.astro';
+
+{/* ══════════════════════════════════
+    FICHES — f-chutes
+══════════════════════════════════ */}
+<Section id="f-chutes">
+<Card title="Physiopathologie flash">
+Triade : **vestibulaire + visuel + proprioceptif**. Avec l'âge : ↓ afférences sensorielles + ↓ force MI (triceps sural++) + ↓ temps de réaction.
+</Card>
+
+<Card title="Tests cliniques recommandés — valeurs seuils (Q1)">
+<table>
+<thead><tr><th>Test</th><th>Description</th><th>Seuil risque</th><th>Niveau</th></tr></thead>
+<tbody>
+<tr><td><strong>TUG</strong></td><td>Lever → 3 m → demi-tour → retour → assis</td><td><Badge color="red">&gt; 12 sec</Badge></td><td><Badge color="green">Grade A</Badge></td></tr>
+<tr><td><strong>Tinetti</strong></td><td>Évaluation statique + dynamique</td><td><Badge color="red">Score faible</Badge></td><td><Badge color="green">Grade A</Badge></td></tr>
+<tr><td><strong>Station unipodale</strong></td><td>Maintien appui monopodal</td><td><Badge color="amber">&lt; 5 sec</Badge></td><td><Badge color="green">Grade A</Badge></td></tr>
+<tr><td><strong>FTSST</strong></td><td>5 levers de chaise chronométrés</td><td>Temps long = faiblesse MI</td><td><Badge color="blue">Grade B</Badge></td></tr>
+<tr><td><strong>Berg Balance Scale</strong></td><td>14 tâches équilibre (0–4/item)</td><td><Badge color="red">&lt; 45 pts</Badge></td><td><Badge color="blue">Grade B</Badge></td></tr>
+<tr><td><strong>Vitesse de marche</strong></td><td>Test sur 4–6 m</td><td><Badge color="red">&lt; 1 m/s</Badge></td><td><Badge color="green">Grade A</Badge></td></tr>
+</tbody>
+</table>
+<AlertBox type="trap">Q1 : Les 3 tests recommandés = Station unipodale + TUG + Tinetti. La marche en parlant et le FTSST ne font PAS partie des 3 principaux.</AlertBox>
+</Card>
+
+<Card title="3 afférences sensorielles (Q5)">
+<Grid3>
+<MiniCard val="👁️" label="Visuel — flux optique, verticalité" />
+<MiniCard val="🌀" label="Vestibulaire — accélérations, canaux" />
+<MiniCard val="🦶" label="Proprioceptif — récepteurs plantaires" />
+</Grid3>
+</Card>
+
+<Card title="Prescription kiné HAS — exercices (Q3)">
+- Correction de la **rétropulsion**
+- Travail **vestibulaire** et repérage dans l'espace
+- **Proprioception** avec sensibilité récepteurs plantaires
+- **Marche rapide** et passage d'obstacles
+- Entretien articulaire + apprentissage relevé de sol si possible
+</Card>
+</Section>
+
+{/* ══════════════════════════════════
+    FICHES — f-desadapt
+══════════════════════════════════ */}
+<Section id="f-desadapt">
+<Grid2>
+<Card title="Forme aiguë">
+- Chute, deuil, fécalome, globe urinaire
+- <Badge color="green">Urgence kiné</Badge> Très bon pronostic
+- Mobilisation **immédiate** (≠ repos)
+</Card>
+<Card title="Forme progressive">
+- Alitement, contention, hospitalisation
+- <Badge color="red">Mauvais pronostic</Badge> Détecté tard
+- → Dépendance iatrogène
+</Card>
+</Grid2>
+
+<Card title="Manifestations cliniques">
+<table>
+<thead><tr><th>Signe</th><th>Description</th></tr></thead>
+<tbody>
+<tr><td><strong>Rétropulsion</strong></td><td>CG en position rétro-maléolaire, perturbation de la verticalité</td></tr>
+<tr><td><strong>Pushing syndrome</strong></td><td>Hypertonie d'opposition — pousse contre toute stimulation</td></tr>
+<tr><td><strong>Schéma véliplanchiste</strong></td><td>Extension du tronc en arrière (debout)</td></tr>
+<tr><td><strong>Triple flexion MI</strong></td><td>2e schéma debout observé</td></tr>
+<tr><td><strong>Chaîne ouverte</strong></td><td>Fléchisseurs de hanche en CO au lieu de CF</td></tr>
+</tbody>
+</table>
+</Card>
+
+<Card title="TMM — Interprétation">
+<Grid2>
+<div><Badge color="red">Score &lt; 6-7</Badge> — Forte rétropulsion</div>
+<div><Badge color="amber">Score &lt; 15</Badge> — Rétropulsion avec adaptation</div>
+</Grid2>
+</Card>
+
+<Grid2>
+<Card title="JAMAIS">
+- Main postérieure (→ pushing)
+- Tirer sur les bras (→ hypertonie)
+- Fauteuil coquille
+- Mettre au lit après chute
+- Table de verticalisation
+</Card>
+<Card title="TOUJOURS">
+- Points fixes, coudes au corps
+- Pieds au sol / cale-pieds
+- Chaussures talon 2-3 cm
+- Stand-up (≠ table de verticalisation)
+- Rollator 2 puis 4 roues
+</Card>
+</Grid2>
+
+<Card title="Progression de rééducation">
+1. Contact/stimulation sensorielle
+2. Travail assis (antéposition)
+3. Stand-up
+4. Assis-debout répété (min 3×5)
+5. Équilibre debout statique → dynamique
+6. Marche barres → rollator
+7. Relevé du sol
+</Card>
+</Section>
+
+{/* ══════════════════════════════════
+    FICHES — f-denut
+══════════════════════════════════ */}
+<Section id="f-denut">
+<AlertBox type="trap">Nutrition = 1er facteur de risque de perte d'années de vie en bonne santé (31%), devant tabac (12%) et alcool (7%). Q18 → B</AlertBox>
+
+<Card title="Diagnostic HAS 2021 — Double critère obligatoire (≥1 phénotypique ET ≥1 étiologique)">
+<Grid2>
+<div>
+<Badge color="blue">Critères phénotypiques</Badge>
+
+- Perte poids ≥ 5% / 1 mois
+- Perte poids ≥ 10% / 6 mois
+- IMC &lt; **22 kg/m²** (PA ≠ adulte &lt;18,5)
+- Sarcopénie confirmée (force + masse)
+</div>
+<div>
+<Badge color="amber">Critères étiologiques</Badge>
+
+- ↓ apports ≥ 50% pdt &gt; 1 semaine
+- ↓ apports pdt &gt; 2 semaines
+- Malabsorption / maldigestion
+- Agression (pathologie aiguë, chronique, maligne)
+</div>
+</Grid2>
+</Card>
+
+<Grid3>
+<MiniCard val="4–10%" label="PA à domicile" />
+<MiniCard val="15–38%" label="En institution" />
+<MiniCard val="30–70%" label="À l'hôpital" />
+</Grid3>
+
+<Card title="Seuils d'alerte perte de poids (Q17 → AD)">
+<table>
+<thead><tr><th>Durée</th><th>Seuil d'alerte</th><th>Annale</th></tr></thead>
+<tbody>
+<tr><td>1 mois</td><td><Badge color="red">≥ 5%</Badge></td><td>A ✓</td></tr>
+<tr><td>6 mois</td><td><Badge color="red">≥ 10%</Badge></td><td>D ✓</td></tr>
+<tr><td>1 an</td><td>≥ 10% seulement</td><td>E ✗ (5%/1an insuffisant)</td></tr>
+</tbody>
+</table>
+</Card>
+
+<Card title="MNA — Q2 → AE">
+- Enregistre : poids, taille, IMC, **circonférence bras et mollets** (A ✓)
+- Mesure aussi mobilité, autonomie, situation de vie
+- Classe en **3 catégories** : normal / risque / mauvais état (E ✓)
+</Card>
+
+<Card title="Programme ICOPE — 6 domaines + 5 étapes (Q34 → D)">
+<Grid2>
+<div>
+<Badge color="blue">6 capacités intrinsèques</Badge>
+
+- Cognition
+- Mobilité
+- Nutrition / Vitalité
+- Audition
+- Vision
+- Psychologie
+</div>
+<div>
+<Badge color="green">5 étapes (réponse D)</Badge>
+
+- Repérage
+- Évaluation
+- Plan de soin personnalisé
+- Suivi parcours de soin
+- Implication collaborateurs/aidants
+</div>
+</Grid2>
+</Card>
+</Section>
+
+{/* ══════════════════════════════════
+    FICHES — f-cognitif
+══════════════════════════════════ */}
+<Section id="f-cognitif">
+<Card title="Alzheimer — Q9 → ADE">
+<table>
+<thead><tr><th>Proposition</th><th>Vrai/Faux</th><th>Explication</th></tr></thead>
+<tbody>
+<tr><td>A — MMSE en 1re ligne</td><td><Badge color="green">VRAI</Badge></td><td>Bilan psychométrique de 1re intention</td></tr>
+<tr><td>B — Pas d'intérêt au diag. précoce</td><td><Badge color="red">FAUX</Badge></td><td>Diagnostic précoce = meilleure prise en charge</td></tr>
+<tr><td>C — Trouble mémoire rétrograde</td><td><Badge color="red">FAUX</Badge></td><td>Alzheimer = mémoire <strong>antérograde</strong> (faits récents)</td></tr>
+<tr><td>D — IRM → atrophie temporale interne</td><td><Badge color="green">VRAI</Badge></td><td>Hippocampe = zone touchée en premier</td></tr>
+<tr><td>E — Dénutrition = complication</td><td><Badge color="green">VRAI</Badge></td><td>Oubli de manger, apraxie, troubles déglutition</td></tr>
+</tbody>
+</table>
+</Card>
+
+<Card title="3 piliers du diagnostic — Q13 → ABC">
+<Grid3>
+<MiniCard val="A" label="IRM cérébrale (ou scanner)" />
+<MiniCard val="B" label="Histoire cognitive" />
+<MiniCard val="C" label="Bilan neuropsychologique" />
+</Grid3>
+<AlertBox type="trap">La ponction lombaire (D) n'est PAS un pilier du diagnostic standard.</AlertBox>
+</Card>
+
+<Card title="MMSE — Q35 → B (FAUX)">
+Un MMSE &lt; 25/30 oriente vers des troubles cognitifs mais ne suffit PAS seul à diagnostiquer Alzheimer. Le diagnostic nécessite les 3 piliers.
+</Card>
+
+<Card title="3 composantes altérées dans les troubles cognitifs — Q8 → BCD">
+<Grid3>
+<MiniCard val="B" label="Émotivo-affective" />
+<MiniCard val="C" label="Cognitive" />
+<MiniCard val="D" label="Comportementale" />
+</Grid3>
+
+A (réglementaire) et E (sensori-discriminative) ne font PAS partie des 3.
+</Card>
+</Section>
+
+{/* ══════════════════════════════════
+    FICHES — f-depend
+══════════════════════════════════ */}
+<Section id="f-depend">
+<Card title="ADL vs IADL — Q12 → ABE (piège !)">
+<table>
+<thead><tr><th></th><th>ADL (Katz)</th><th>IADL (Lawton)</th></tr></thead>
+<tbody>
+<tr><td><strong>Évalue</strong></td><td>Activités basiques</td><td>Activités instrumentales</td></tr>
+<tr><td><strong>Exemples</strong></td><td>Toilette, habillage, alimentation, continence, déplacement</td><td>Téléphone, courses, cuisine, ménage, <strong>médicaments</strong>, finances, transports</td></tr>
+<tr><td><strong>Score</strong></td><td>0 à 6 (6/6 = autonome) ✓</td><td>0 à 8</td></tr>
+<tr><td><strong>Morbi-mortalité</strong></td><td>Prédictive ✓ (E)</td><td>Oui aussi</td></tr>
+</tbody>
+</table>
+<AlertBox type="trap">D est FAUX → c'est l'IADL (et non l'ADL) qui évalue les activités instrumentales (gestion traitements, administrative).</AlertBox>
+</Card>
+
+<Card title="Dépendance iatrogène — Q24 → ABE">
+- Liée à l'**hospitalisation** (B ✓)
+- Mobiliser **précocement et rapidement** si possible (A ✓)
+- Dépendance **potentiellement évitable** (E ✓)
+- C FAUX — ne pas laisser au lit
+- D FAUX — sonde urinaire inutile si déplacement possible
+</Card>
+
+<Card title="Signes de perte d'indépendance fonctionnelle — Q26 → ABDE">
+- A ✓ — Hospitalisation récente
+- B ✓ — Aide technique à la marche récente
+- C ✗ — Troubles marche anciens séquellaires (état stable)
+- E ✓ — Mise en place d'aides à domicile récente
+</Card>
+
+<Card title="Aides à domicile — Q21 → ABCDE (tout !)">
+- A — Passage IDE (toilette + traitements)
+- B — Portage des repas
+- C — Auxiliaire de vie (gestion repas)
+- D — Séances de kinésithérapie
+- E — Séances d'orthophonie
+</Card>
+</Section>
+
+{/* ══════════════════════════════════
+    FICHES — f-pied
+══════════════════════════════════ */}
+<Section id="f-pied">
+<Card title="Vieillissement cutané plantaire — Q6 → A">
+<table>
+<thead><tr><th>Modification</th><th>Conséquence clinique</th></tr></thead>
+<tbody>
+<tr><td>Affinement peau (↓ derme + épiderme)</td><td>Fragilité, risque plaies</td></tr>
+<tr><td>↓ collagène + élastine</td><td>Perte d'élasticité</td></tr>
+<tr><td>↓ sébum</td><td>Sécheresse cutanée</td></tr>
+<tr><td><strong>Fonte du capiton plantaire</strong></td><td>Hyperkératose, douleurs marche, ↑ risque plaies</td></tr>
+</tbody>
+</table>
+</Card>
+
+<Card title="Vieillissement unguéal — Q10 → A">
+- **Épaississement** + **jaunissement** (A ✓)
+- Fragilité (se cassent/fendent)
+- Modification de la courbure
+
+<AlertBox type="info">Conséquences : ongles incarnés, mycoses (sur ongle traumatisé), onychogryphoses, cors péri-unguéaux.</AlertBox>
+</Card>
+
+<Card title="Correction des déformations unguéales — Q36 → A">
+<Grid2>
+<div><Badge color="green">Orthonyxies (A) ✓</Badge> — Correction de la courbure de l'ongle (agrafes, lames)</div>
+<div><Badge color="red">Orthoplasties (B) ✗</Badge> — Correction des déformations des orteils (griffes, chevauchements)</div>
+</Grid2>
+</Card>
+
+<Card title="Facteurs de risque infectieux du pied PA — Q7 → ABC">
+- A ✓ — Diabète (neuropathie + ulcérations)
+- B ✓ — ↓ circulation sanguine (retard cicatrisation)
+- C ✓ — ↓ immunité (physiologique avec l'âge)
+- D ✗ — ↗ immunité = FAUX
+</Card>
+
+<Card title="Modifications de la marche chez la PA">
+- Vitesse : ↓ 15% / décennie après 70 ans
+- Raccourcissement du pas (faiblesse triceps sural)
+- Augmentation largeur du pas (stabilité)
+- Attaque sol sur **médio-pied** (perte déroulé talon-orteils)
+- ↓ balancement des bras — ↓ force de propulsion
+</Card>
+</Section>
+
+{/* ══════════════════════════════════
+    FICHES — f-iu
+══════════════════════════════════ */}
+<Section id="f-iu">
+<Card title="4 formes d'incontinence">
+<table>
+<thead><tr><th>Type</th><th>Mécanisme</th><th>Signes clés</th></tr></thead>
+<tbody>
+<tr><td><strong>Instabilité vésicale</strong> (+ fréquent PA)</td><td>Contractions vésicales pendant remplissage</td><td>Urgences mictionnelles, fuites abondantes (80 ml), pollakiurie, nycturie</td></tr>
+<tr><td><strong>Insuffisance sphinctérienne</strong></td><td>Forces retenue &lt; forces évacuation</td><td>Fuites à l'effort, peu abondantes, jamais la nuit</td></tr>
+<tr><td><strong>Mixte</strong></td><td>Association des 2</td><td>Un tableau prend le devant — risque de masquage</td></tr>
+<tr><td><strong>Regorgement (trop-plein)</strong></td><td>Forces évacuatrices &lt; forces de retenue</td><td>Dysurie, absence de besoin, fuites diurnes ET nocturnes</td></tr>
+</tbody>
+</table>
+</Card>
+
+<Card title="Q37 — 3 signes de l'instabilité vésicale">
+<Grid3>
+<MiniCard val="1" label="Fuites urinaires" />
+<MiniCard val="2" label="Impériosités mictionnelles" />
+<MiniCard val="3" label="Pollakiurie" />
+</Grid3>
+</Card>
+
+<Card title="Rééducation incontinence d'effort femme âgée — Q30">
+<Grid3>
+<div><Badge color="green">Méthode active</Badge><ul><li>Méthode Kegel</li><li>Biofeedback</li></ul></div>
+<div><Badge color="blue">Méthode passive</Badge><ul><li>Électrostimulation</li><li>50–200 Hz</li></ul></div>
+<div><Badge color="amber">Hygiène de vie</Badge><ul><li>Conseils quotidiens</li></ul></div>
+</Grid3>
+</Card>
+
+<Card title="Causes IU transitoire — acronyme DIAPPERS">
+<table>
+<thead><tr><th>Lettre</th><th>Cause</th></tr></thead>
+<tbody>
+<tr><td>D</td><td>Delirium (confusion)</td></tr>
+<tr><td>I</td><td>Infections urinaires</td></tr>
+<tr><td>A</td><td>cArence hormonale</td></tr>
+<tr><td>P</td><td>causes Psychologiques</td></tr>
+<tr><td>P</td><td>Poly-médication</td></tr>
+<tr><td>E</td><td>Excès de diurèse</td></tr>
+<tr><td>R</td><td>Restriction de mobilité</td></tr>
+<tr><td>S</td><td>Selles (constipation)</td></tr>
+</tbody>
+</table>
+</Card>
+
+<Card title="Conseils généraux PA — Q22 → ABCE">
+- A ✓ — Hygiène bucco-dentaire et soins réguliers
+- B ✓ — ≥ 1500 kcal/j minimum
+- C ✓ — Alimentation variée, équilibrée, diversifiée
+- E ✓ — Poids surveillé régulièrement
+- D ✗ — L'activité physique reste primordiale à tout âge
+</Card>
+</Section>
+
+{/* ══════════════════════════════════
+    COURS — c-chutes
+══════════════════════════════════ */}
+<Section id="c-chutes">
+<Card title="Épidémiologie">
+<Grid3>
+<MiniCard val="2M" label="chutes/an chez PA > 65 ans" />
+<MiniCard val="100 000" label="hospitalisations/an" />
+<MiniCard val="10 000" label="décès/an — 2 Mds € de coût" />
+</Grid3>
+</Card>
+
+<Card title="Facteurs prédisposants intrinsèques">
+<Grid2>
+<ul>
+<li>Âge ≥ 80 ans, sexe féminin</li>
+<li>ATCD chutes / fractures / insuffisance osseuse</li>
+<li>Polymédication — psychotropes, diurétiques, antiarythmiques</li>
+<li>Trouble de la marche ou de l'équilibre</li>
+<li>Baisse de force musculaire MI</li>
+<li>IMC &lt; 21 ou &gt; 30 kg/m²</li>
+</ul>
+<ul>
+<li>Arthrose rachis et MI</li>
+<li>Baisse d'acuité visuelle</li>
+<li>Syndrome dépressif</li>
+<li>Déclin cognitif</li>
+<li>Sarcopénie</li>
+<li>Douleur chronique</li>
+</ul>
+</Grid2>
+</Card>
+
+<Card title="Principe fondamental ⚠">
+<AlertBox type="trap">La chute « mécanique » n'existe pas. C'est uniquement un diagnostic d'exclusion — toujours rechercher une cause sous-jacente.</AlertBox>
+</Card>
+
+<Card title="2 profils types de chuteurs">
+<table>
+<thead><tr><th></th><th>Profil 1 (30%)</th><th>Profil 2 (50%)</th></tr></thead>
+<tbody>
+<tr><td><strong>Âge</strong></td><td>&lt; 85 ans</td><td>&gt; 85 ans / femme</td></tr>
+<tr><td><strong>Autonomie</strong></td><td>Autonome, activité physique régulière</td><td>Fragile/dépendant, pas d'activité physique</td></tr>
+<tr><td><strong>Lieu chute</strong></td><td>Plutôt extérieur</td><td>Plutôt intérieur (transfert...)</td></tr>
+<tr><td><strong>Rééducation</strong></td><td>Stepping, mise en situation</td><td>Récidive +++ — difficile à rééduquer</td></tr>
+</tbody>
+</table>
+</Card>
+
+<Card title="Repérage risque de chute — 3 questions initiales">
+- ATCD de chutes ?
+- Peur de chuter ?
+- Instabilité à la marche ?
+
+**Critères de gravité :**
+- Blessure / Station au sol (ne peut pas se relever)
+- Répétition ≥ 2 chutes/an
+- Fragilité associée
+- Perte de connaissance / Syncope
+</Card>
+
+<Card title="Paramètres de marche à risque">
+<Grid2>
+<div><Badge color="red">Vitesse de marche ≤ 0,8 m/s</Badge></div>
+<div><Badge color="red">TUG &gt; 15 secondes</Badge></div>
+</Grid2>
+</Card>
+
+<Card title="Conduite à tenir urgence post-chute">
+- Constantes + glycémie
+- Cardiologie : syncope ? TA ?
+- Locomoteur : déformation ? douleur ?
+- Neurologique — Vigilance → **Traumatisme crânien (TC)**
+
+<table>
+<thead><tr><th>Gravité TC</th><th>GCS</th><th>CAT</th></tr></thead>
+<tbody>
+<tr><td>Léger</td><td>13-15</td><td>TDM 4-8h (AAP/AC). Si AC curatif : TDM immédiate</td></tr>
+<tr><td>Modéré</td><td>9-12</td><td>TDM immédiate</td></tr>
+<tr><td>Grave / Symptomatique</td><td>&lt; 9</td><td>Imagerie + transfert neurochirurgie immédiat</td></tr>
+</tbody>
+</table>
+</Card>
+
+<Card title="Ostéoporose — définition et diagnostic">
+- Diminution de la densité minérale osseuse + modification de la microarchitecture
+- **T-score ≤ -2,5 DS** → diagnostic d'ostéoporose (col fémoral, hanche ou vertèbre)
+- Après 50 ans : 1/2 femme et 1/5 homme auront une fracture de l'extrémité supérieure du fémur
+</Card>
+
+<Card title="3 options de traitement de l'ostéoporose">
+<table>
+<thead><tr><th>Ligne</th><th>Médicament</th><th>Mode</th></tr></thead>
+<tbody>
+<tr><td><Badge color="green">1re intention</Badge></td><td>Biphosphonates (Alendronate, Risedronate, Zolédronate ACLASTA©)</td><td>Oral (quotidien/hebdo/mensuel) ou IV annuel</td></tr>
+<tr><td><Badge color="amber">2e intention</Badge></td><td>Denosumab PROLIA©</td><td>SC tous les 6 mois</td></tr>
+<tr><td><Badge color="gray">Cas spéciaux</Badge></td><td>Teriparatide FORSTEO© (18 mois max)</td><td>SC quotidien — si ≥ 2 fractures vertébrales</td></tr>
+</tbody>
+</table>
+</Card>
+
+<Card title="Vitamine D — à retenir">
+- Synthèse : 20% alimentation + 80% UV-B (10-30 min, 2-3×/semaine)
+- Effets : osseux (minéralisation) + musculaires (tonicité) + neurologiques (↓ neurodégénérescence)
+- Déficit : 75% des adultes
+
+<table>
+<thead><tr><th>Seuil</th><th>Valeur</th></tr></thead>
+<tbody>
+<tr><td>Carence</td><td><Badge color="red">&lt; 25 nmol/L</Badge></td></tr>
+<tr><td>Norme</td><td><Badge color="green">75–150 nmol/L</Badge></td></tr>
+<tr><td>Toxicité</td><td><Badge color="red">&gt; 375 nmol/L</Badge></td></tr>
+</tbody>
+</table>
+
+<AlertBox type="info">Supplémentation sans dosage possible. Diminution des chutes après 70 ans si taux &gt; 75 nmol/L.</AlertBox>
+</Card>
+
+<Card title="Prévention des fractures — jusqu'à 80% évitées">
+- Sevrage tabagique
+- Mesures de prévention des chutes
+- Activité physique avec impact (marche +++)
+- Vitamine D + calcium
+- Apprentissage de la bonne façon de tomber
+</Card>
+</Section>
+
+{/* ══════════════════════════════════
+    COURS — c-desadapt
+══════════════════════════════════ */}
+<Section id="c-desadapt">
+<Card title="Présentation du syndrome — 2 formes">
+<Grid2>
+<div>
+<Badge color="green">Forme aiguë</Badge>
+
+- Chute, deuil, fécalome, globe urinaire
+- Urgence kinésithérapique
+- Très bon pronostic si PEC rapide
+- Mobilisation immédiate (≠ repos)
+</div>
+<div>
+<Badge color="red">Forme progressive</Badge>
+
+- Restrictions d'activité, alitement, contention, hospit.
+- Hospit. → dépendance iatrogène (physique, psycho, cognitif)
+- Ralentissement moteur progressif
+- Mauvais pronostic — détecté tardivement
+</div>
+</Grid2>
+</Card>
+
+<Card title="Manifestations cliniques">
+- **Rétropulsion** : CG en position rétro-maléolaire, perturbation de la verticalité
+- **Perturbation des schémas moteurs** : chaînes ouvertes au lieu de fermées
+- **Hypertonie d'opposition (Pushing Syndrome)** : pousse contre toute stimulation
+- **Appréhension importante à la chute** : agrippement à tout support
+
+**Schémas perturbés en statique :**
+- Position assise : maintien sans appui quasi impossible, glissement vers le bas au fauteuil
+- Position debout : schéma véliplanchiste (extension tronc en arrière) OU triple flexion MI
+- Absence de réactions d'adaptation posturale
+
+**En dynamique :**
+- Transfert de poids insuffisant ou totalement perturbé
+- Impossibilité de libérer les appuis
+- Fléchisseurs de hanche en chaîne ouverte (au lieu de chaîne fermée)
+</Card>
+
+<Card title="Bilan : TMM (Test Moteur Minimum)">
+- Évaluation au lit (retournement, position assise)
+- Équilibre assis — capacité à se pencher en avant
+- Position debout (avec/sans appui, yeux fermés, unipodal)
+- Réactions d'adaptation posturale (stratégies cheville/hanche)
+- Réactions parachute (déséquilibre important nécessitant un pas)
+- Évaluation de la marche
+
+<Grid2>
+<div><Badge color="red">Score &lt; 6-7</Badge> Forte rétropulsion</div>
+<div><Badge color="amber">Score &lt; 15</Badge> Rétropulsion avec adaptation</div>
+</Grid2>
+</Card>
+
+<Card title="Principes de prise en charge — règles absolues">
+<Grid2>
+<div>
+<AlertBox type="danger">JAMAIS</AlertBox>
+
+- Main postérieure → stimule le pushing syndrome
+- Tirer sur les bras → provoque hypertonie d'opposition
+- Fauteuils coquilles ou trop confortables
+- Mettre au lit directement après chute
+- Table de verticalisation (stimule le dos)
+</div>
+<div>
+<AlertBox type="ok">TOUJOURS</AlertBox>
+
+- Points fixes avec coudes au corps
+- Pieds au sol ou sur cale-pieds obligatoirement
+- Chaussures à talon de 2-3 cm
+- Stand-up (≠ table de verticalisation)
+- Rollator 2 roues puis 4 roues (≠ déambulateur fixe)
+- Verticalisation près d'une fenêtre/porte/espalier (repères visuels)
+</div>
+</Grid2>
+</Card>
+
+<Card title="Objectifs de rééducation">
+- Obtenir un équilibre assis et debout
+- Reprise de la marche
+- Modifier les schémas moteurs
+- Redonner un sens de la verticalité
+- Redonner des appuis
+- Réamorcer les réactions d'adaptation posturale
+- Permettre le transfert de poids pour libérer le mouvement
+</Card>
+
+<Card title="Techniques de rééducation — progression">
+**Pour l'équilibre assis :**
+- Redonner le sens de la verticalité (mobilisations passives et actives MI + chevilles)
+- Stimulation de la sensibilité superficielle des pieds (avant-pied)
+- Travail du rehaussement et retournement au lit
+- Marche fessière latérale sur table (hauteur variable)
+
+**Pour l'équilibre debout :**
+- Stand-up — verticalisation près d'une fenêtre/porte/espalier
+- Correction rétropulsion : main sur le ventre (pas dans le dos)
+- Mobilisation des MI + stimulation plantaire
+- Transfert de poids latéral puis antéro-postérieur
+- Équilibre statique bipodal puis déstabilisations intrinsèques
+
+**Pour le transfert assis-debout :**
+- Verticaliser **avant** de travailler le transfert
+- Répétition intensive : **minimum 3 séries de 5 par séance**
+- Appui en avant et en bas — accoudoirs plutôt que déambulateur
+- Aide possible : main au sacrum ou à l'occiput (pas de pushing)
+
+**Pour la reprise de marche :**
+- Commencer dans les barres parallèles
+- Marche pingouin (transfert de poids) + marche fessière latérale
+- Rollator 2 roues → 4 roues (favorise le CG vers l'avant)
+- Correction progressive : déroulement du pas, temps unipodal, polygone de sustentation
+
+**Relevé du sol :**
+- Mise au sol progressive avec marche-pied
+- Apprivoisement du sol (discussion, exercices à 4 pattes)
+- Position chevalier servant → apprentissage du relevé complet
+</Card>
+
+<Card title="Prévention du syndrome post-chute">
+- Ne pas paniquer — évaluer calmement (fracture ? TC ?)
+- Favoriser la participation active de la personne au relevé
+- Ne jamais mettre au lit directement après la chute (sauf suspicion fracture)
+- Utiliser chaise ou lève-malade avec participation du patient
+</Card>
+</Section>
+
+{/* ══════════════════════════════════
+    COURS — c-denut
+══════════════════════════════════ */}
+<Section id="c-denut">
+<Card title="Données démographiques clés">
+- 2030 : 1 personne sur 6 aura 60 ans et plus dans le monde
+- 2050 : 2 milliards de personnes âgées de 60 ans et plus (doublement)
+- France 2050 : 23 millions de personnes ≥ 60 ans — 2,8 millions en perte d'autonomie
+- 3 catégories : **robustes** (&gt;50% des PA), **fragiles**, **dépendantes**
+</Card>
+
+<Card title="Enjeux nutritionnels spécifiques chez la PA">
+- ↑ masse grasse + redistribution (abdominale chez la femme)
+- ↓ masse musculaire dès 30-40 ans → **sarcopénie**
+- ↓ masse osseuse (accélérée chez la femme en ménopause)
+- Modifications qualitatives du tissu musculaire → perte de force
+
+<AlertBox type="info">La sarcopénie peut désormais être un critère diagnostic de dénutrition du sujet âgé (nouvelles recommandations HAS).</AlertBox>
+</Card>
+
+<Card title="Diagnostic dénutrition HAS 2021 — ≥ 70 ans">
+<AlertBox type="trap">Nécessite ≥ 1 critère phénotypique ET ≥ 1 critère étiologique</AlertBox>
+<Grid2>
+<div>
+<Badge color="blue">Critères phénotypiques</Badge>
+
+- Perte de poids ≥ **5% en 1 mois**
+- Perte de poids ≥ **10% en 6 mois**
+- Perte de poids ≥ 10% / poids habituel avant maladie
+- IMC &lt; **22 kg/m²**
+- Sarcopénie confirmée (↓ force musculaire + ↓ masse musculaire)
+</div>
+<div>
+<Badge color="amber">Critères étiologiques</Badge>
+
+- ↓ apports ≥ 50% pendant &gt; 1 semaine
+- Toute ↓ apports pendant &gt; 2 semaines
+- Absorption réduite (malabsorption / maldigestion)
+- Situation d'agression : pathologie aiguë / chronique évolutive / maligne
+</div>
+</Grid2>
+</Card>
+
+<Card title="Prévalence de la dénutrition">
+<Grid3>
+<MiniCard val="4–10%" label="À domicile" />
+<MiniCard val="15–38%" label="En institution" />
+<MiniCard val="30–70%" label="À l'hôpital" />
+</Grid3>
+</Card>
+
+<Card title="Surveillance nutritionnelle — fréquence recommandée">
+<table>
+<thead><tr><th>Lieu</th><th>Fréquence de surveillance</th></tr></thead>
+<tbody>
+<tr><td>À domicile</td><td>1 fois/mois + à chaque consultation médicale</td></tr>
+<tr><td>Hôpital MCO / SSR</td><td>À l'entrée + au moins 1 fois/semaine + à la sortie</td></tr>
+<tr><td>EHPAD / USLD</td><td>À l'entrée + au moins 1 fois/mois</td></tr>
+<tr><td>Événement intercurrent</td><td>Au moins 1 fois/semaine (poids, appétit, consommations)</td></tr>
+</tbody>
+</table>
+</Card>
+
+<Card title="Outil MNA — Mini Nutritional Assessment">
+L'OMS recommande son utilisation. Il enregistre :
+- Poids, taille, IMC, **circonférence des bras et des mollets**
+- Consommation d'aliments et de liquides
+- Perte d'appétit et perte de poids récente
+- Mobilité, autonomie, stress psychologique, situation de vie
+
+<table>
+<thead><tr><th>Score MNA</th><th>Interprétation</th><th>Conduite à tenir</th></tr></thead>
+<tbody>
+<tr><td>24-30</td><td><Badge color="green">État nutritionnel normal</Badge></td><td>Couvrir les besoins — réévaluer 1/an</td></tr>
+<tr><td>17-23,5</td><td><Badge color="amber">Risque de malnutrition</Badge></td><td>Surveiller fréquemment, enrichir alimentation</td></tr>
+<tr><td>&lt; 17</td><td><Badge color="red">Dénutrition</Badge></td><td>Intervention nutritionnelle spécialisée + CNO</td></tr>
+</tbody>
+</table>
+</Card>
+
+<Card title="Besoins nutritionnels de la PA">
+- Énergie : **30 kcal/kg/j** (état normal) → 30-40 kcal/kg/j (dénutrition)
+- Protéines : **1,2 g/kg/j** (état normal) → 1,2-1,5 g/kg/j (dénutrition)
+- Apport calorique minimum : **1500 kcal/j** pour couvrir vitamines et minéraux
+- Carences fréquentes avec l'âge : vitamines C, D, B12, B9
+
+<AlertBox type="ok">CNO (Compléments Nutritionnels Oraux) : 400 kcal/j et/ou 30g protéines/j — en **plus** et non à la place des repas !</AlertBox>
+</Card>
+
+<Card title="Programme ICOPE — OMS">
+Objectif : diminuer le nombre de PA dépendantes. Préventif, basé sur la médecine digitale, centré sur l'autonomisation du sénior.
+
+<Grid2>
+<div>
+<Badge color="blue">6 capacités intrinsèques</Badge>
+
+- Cognition
+- Mobilité
+- Nutrition / Vitalité
+- Audition
+- Vision
+- Psychologie
+</div>
+<div>
+<Badge color="green">5 étapes (réponse D — Q34)</Badge>
+
+- Repérage
+- Évaluation
+- Plan de soin personnalisé
+- Suivi parcours de soin
+- Implication collaborateurs / aidants
+</div>
+</Grid2>
+
+<AlertBox type="info">Nouvelles dimensions intégrées : dimension sociale + aidant + incontinence urinaire.</AlertBox>
+</Card>
+</Section>
+
+{/* ══════════════════════════════════
+    COURS — c-depend
+══════════════════════════════════ */}
+<Section id="c-depend">
+<Card title="Continuum de perte d'autonomie">
+IADL → perte en premier (cognitif ++) → ADL → puis perte des actes de base → Dépendance
+
+<AlertBox type="trap">Patient considéré **dépendant** si ADL &lt; 4/6. **Fortement dépendant** si ADL &lt; 3/6. Après 3 semaines / 1 mois dans cet état → perte d'autonomie irréversible.</AlertBox>
+</Card>
+
+<Card title="Échelle ADL de Katz — activités basiques">
+- Score maximal : **6/6** (autonomie totale)
+- Évalue : hygiène, habillage, aller aux toilettes, transferts, continence, prise de repas
+- Validée à l'échelle internationale — très robuste
+- Prédictive de morbi-mortalité
+- Évalue le besoin d'aide **humaine** (pas matérielle) — aide technique ≠ aide ADL
+
+<AlertBox type="info">Ex : si le patient utilise une aide technique pour manger mais mange seul → non comptabilisé comme aide.</AlertBox>
+</Card>
+
+<Card title="Échelle IADL de Lawton — activités instrumentales">
+- Score maximal : **8/8** (pour les femmes — 5/5 pour hommes ancienne génération)
+- Items : téléphone, courses, cuisine, ménage, linge, transports, **traitements**, finances
+- La perte aux items téléphone, transport, traitement, budget = signe **précoce** de troubles cognitifs
+- Utile au dépistage en consultation
+</Card>
+
+<Card title="Grille AGGIR — à connaître sommairement">
+- 6 niveaux : GIR 1 (+ dépendant) → GIR 6 (autonomie totale)
+- Utilisée seulement en France — non validée internationalement
+- Utilisée à des fins réglementaires : attribution de l'APA, tarification des institutions
+</Card>
+
+<Card title="Aides à domicile — types et financement">
+<Grid2>
+<div>
+<Badge color="teal">Aides humaines</Badge>
+
+- Aidant naturel (entourage) — vigilance épuisement !
+- IDE / aide-soignant sur prescription (jusqu'à 4×/j)
+- Aide ménagère / auxiliaire de vie (APA, mutuelle, autofinancement)
+- Kiné, orthophoniste, ESA Alzheimer (10 séances/an remboursées 100%)
+</div>
+<div>
+<Badge color="blue">Aides matérielles</Badge>
+
+- Portage des repas (modulable 1-2 repas/j, 7j/7)
+- Téléassistance (peu utile si troubles cognitifs)
+- Location matériel médicalisé (sur prescription)
+- Aménagement du domicile
+- Mesures de répit aidants (accueil de jour, mise en institution transitoire)
+</div>
+</Grid2>
+</Card>
+
+<Card title="Plan National de Prévention de la Perte d'Autonomie — 6 axes">
+1. Préserver l'autonomie : éduquer à la santé tout au long de la vie
+2. Prévenir les pertes d'autonomie évitables — repérer les facteurs de fragilité
+3. Éviter l'aggravation des situations déjà caractérisées par une incapacité
+4. Réduire les inégalités sociales et territoriales de santé
+5. Former les professionnels à la prévention de la perte d'autonomie
+6. Développer la recherche et les stratégies d'évaluation
+</Card>
+
+<Card title="Changement de lieu de vie — quand ?">
+- Quand la PEC à domicile est dépassée
+- ADL &lt; 3/6 → vie à domicile non viable
+- Structures : EHPAD, Résidence seniors (nécessite autonomie suffisante), USLD, Foyer logement
+
+<AlertBox type="ok">L'EHPAD n'est pas une fin en soi — le but est toujours de maintenir le plus longtemps possible à domicile.</AlertBox>
+</Card>
+</Section>
+
+{/* ══════════════════════════════════
+    COURS — c-iu
+══════════════════════════════════ */}
+<Section id="c-iu">
+<Card title="4 formes d'incontinence urinaire">
+<table>
+<thead><tr><th>Type</th><th>Mécanisme</th><th>Signes cliniques clés</th><th>Particularités</th></tr></thead>
+<tbody>
+<tr><td><strong>Instabilité vésicale</strong></td><td>Contractions vésicales pendant la phase de remplissage</td><td>Urgences mictionnelles, fuites abondantes (80 ml), pollakiurie, nycturie, énurésie</td><td>+ fréquente chez PA. Sujets anxieux ++</td></tr>
+<tr><td><strong>Insuffisance sphinctérienne</strong> (effort)</td><td>Forces de retenue &lt; forces d'évacuation</td><td>Fuites à l'effort (toux, rire, sport), peu abondantes, jamais la nuit</td><td>Plutôt chez la femme (troubles statique pelvienne) et homme (prostatectomie)</td></tr>
+<tr><td><strong>Mixte</strong></td><td>Association des 2</td><td>Un tableau prend le devant de la scène — risque de masquage</td><td>Toujours éliminer l'instabilité vésicale avant chirurgie sphinctérienne !</td></tr>
+<tr><td><strong>Regorgement</strong></td><td>Forces évacuatrices &lt; forces de retenue</td><td>Dysurie, absence de besoin, fuites diurnes et nocturnes, effort pour uriner</td><td>Cause : obstacle prostatique, atonie du détrusor (post-rétention urinaire)</td></tr>
+</tbody>
+</table>
+</Card>
+
+<Card title="Acronyme DIAPPERS — IU transitoire (à éliminer en premier)">
+<table>
+<thead><tr><th>Lettre</th><th>Cause</th><th>Exemple</th></tr></thead>
+<tbody>
+<tr><td><strong>D</strong></td><td>Delirium</td><td>Confusion aiguë</td></tr>
+<tr><td><strong>I</strong></td><td>Infections urinaires</td><td>Cystite → instabilité vésicale réactionnelle</td></tr>
+<tr><td><strong>A</strong></td><td>cArence hormonale</td><td>Carence œstrogénique post-ménopause</td></tr>
+<tr><td><strong>P</strong></td><td>causes Psychologiques</td><td>Dépression, anxiété</td></tr>
+<tr><td><strong>P</strong></td><td>Poly-médication</td><td>Anticholinestérasiques, diurétiques, anti-HTA, sédatifs</td></tr>
+<tr><td><strong>E</strong></td><td>Excès de diurèse</td><td>Hyperhydratation, diabète</td></tr>
+<tr><td><strong>R</strong></td><td>Restriction de mobilité</td><td>Incapacité locomotrice — IU « situationnelle »</td></tr>
+<tr><td><strong>S</strong></td><td>Selles (constipation)</td><td>Fécalome → compression vésicale</td></tr>
+</tbody>
+</table>
+</Card>
+
+<Card title="Bilan urodynamique (BUD) — quand l'utiliser chez la PA ?">
+- Échec du traitement empirique bien conduit
+- Médicaments avec effets secondaires importants envisagés
+- **Chaque fois qu'on envisage une chirurgie pour incontinence d'effort** (risque d'instabilité masquée)
+
+<AlertBox type="info">Le BUD n'est nécessaire que dans 10% des cas — l'arbre décisionnel clinique suffit pour 90%.</AlertBox>
+</Card>
+
+<Card title="Résidu post-mictionnel — valeurs">
+- Pathologique si résidu **≥ 100-150 mL** après miction
+- Pathologique si résidu **≥ 20% du volume mictionnel**
+- Évaluation : bladder scan (échographe) ou sondage (acte infirmier/médical)
+</Card>
+
+<Card title="Rééducation — incontinence d'effort femme âgée (Q30)">
+<Grid3>
+<div>
+<Badge color="green">Méthode active</Badge>
+
+- Méthode Kegel (contractions périnéales)
+- Biofeedback
+</div>
+<div>
+<Badge color="blue">Méthode passive</Badge>
+
+- Électrostimulation fonctionnelle
+- 50–200 Hz
+</div>
+<div>
+<Badge color="amber">Hygiène de vie</Badge>
+
+- Conseils de vie quotidienne
+- Régulation apports hydriques
+</div>
+</Grid3>
+</Card>
+</Section>
+
+{/* ══════════════════════════════════
+    COURS — c-pied
+══════════════════════════════════ */}
+<Section id="c-pied">
+<Card title="Domaine du pédicure-podologue">
+<Grid3>
+<MiniCard val="📋" label="Diagnostic" />
+<MiniCard val="✂️" label="Soins de pédicurie" />
+<MiniCard val="🦺" label="Semelles orthopédiques" />
+<MiniCard val="🦿" label="Orthoplasties" />
+<MiniCard val="🔧" label="Orthonyxies" />
+<MiniCard val="👟" label="Chaussures thérapeutiques" />
+</Grid3>
+</Card>
+
+<Card title="Vieillissement cutané">
+<table>
+<thead><tr><th>Modification</th><th>Conséquence clinique</th></tr></thead>
+<tbody>
+<tr><td>Affinement peau (↓ derme + épiderme)</td><td>Fragilité cutanée, risque de plaies</td></tr>
+<tr><td>↓ fibres collagène + élastine</td><td>Perte d'élasticité</td></tr>
+<tr><td>↓ production sébum</td><td>Sécheresse cutanée, altération fonction barrière</td></tr>
+<tr><td><strong>Fonte du capiton plantaire</strong> (↓ graisse plantaire)</td><td><strong>Hyperkératose plantaire</strong>, douleurs à la marche, ↑ risque plaies (mauvaise répartition des pressions)</td></tr>
+</tbody>
+</table>
+</Card>
+
+<Card title="Vieillissement unguéal">
+<table>
+<thead><tr><th>Modification</th><th>Conséquence / Pathologie</th></tr></thead>
+<tbody>
+<tr><td><strong>Épaississement</strong> (microtraumatismes du chaussant)</td><td>Onychogryphoses, cors sous/péri-unguéaux</td></tr>
+<tr><td><strong>Jaunissement</strong> (↓ circulation + vernis)</td><td>Signe de vieillissement vasculaire</td></tr>
+<tr><td><strong>Fragilité</strong> (troubles nutrition/hydratation)</td><td>Fissures, fractures unguéales</td></tr>
+<tr><td><strong>Modification de la courbure</strong> (hormonale, génétique, traumatique)</td><td>Ongles incarnés, mycoses (uniquement sur ongle traumatisé)</td></tr>
+</tbody>
+</table>
+<AlertBox type="info">Correction des déformations unguéales : **orthonyxies** (agrafes, lames). ≠ Orthoplasties = déformations des orteils.</AlertBox>
+</Card>
+
+<Card title="Déformations ostéo-articulaires">
+- ↓ graisse plantaire → instabilité du pied + affaissement voûte plantaire
+- Ostéoporose → ↑ risque fracture et déformations
+- Arthrose → détérioration cartilage (favorisée par mauvais chaussant)
+
+Conséquences : hallux valgus, effondrement médio-pied, hallux rigidus, griffes d'orteils, délabrement avant-pied.
+</Card>
+
+<Card title="Fragilité infectieuse">
+- Modification de la flore cutanée (streptocoques, bactéries gram négatif)
+- Facteurs de risque : ↓ immunité, diabète (neuropathie + ulcérations), maladies vasculaires (↓ apport sanguin → retard cicatrisation)
+
+<table>
+<thead><tr><th>Type</th><th>Exemples</th></tr></thead>
+<tbody>
+<tr><td>Fongique</td><td>Intertrigo inter-orteils, onychomycose</td></tr>
+<tr><td>Bactérienne</td><td>Plaies chroniques, escarres</td></tr>
+<tr><td>Virale</td><td>Verrues (si immunité affaiblie)</td></tr>
+</tbody>
+</table>
+
+<AlertBox type="trap">Zones à risque d'escarres : talon (40%), sacrum (40%), ischions, trochanters. Décharge systématique si escarre présente.</AlertBox>
+</Card>
+
+<Card title="Modifications de la marche chez la PA">
+- Ralentissement vitesse : ↓ **15% par décennie** après 70 ans
+- Raccourcissement du pas → faiblesse du **triceps sural**
+- Augmentation de la largeur du pas (stabilité)
+- Réduction du balancement des bras (phase oscillante réduite)
+- Attaque au sol sur le **médio-pied** (perte du déroulé talon-orteils)
+- Force de propulsion diminuée
+</Card>
+
+<Card title="Examen clinique podologique — 4 axes">
+<table>
+<thead><tr><th>Examen</th><th>Contenu</th></tr></thead>
+<tbody>
+<tr><td><strong>Dermatologique</strong></td><td>Aspect cutané, unguéal, vasculaire (pouls pédieux et tibial). Pathologies : durillons, cors, ongles incarnés, onychomycose</td></tr>
+<tr><td><strong>Morphologique</strong></td><td>Empreinte plantaire (plat / physiologique / creux) + axe calcanéen. Pathologies : hallux valgus, griffes d'orteils, effondrement médio-pied</td></tr>
+<tr><td><strong>Baropodométrique</strong></td><td>Quantification pressions plantaires statique et dynamique. NE FAIT PAS LE DIAGNOSTIC — complément. Zones rouges = fortes pressions</td></tr>
+<tr><td><strong>Dynamique</strong></td><td>Test de vitesse de marche + TUG + Tinetti + Berg + FTSST</td></tr>
+</tbody>
+</table>
+</Card>
+</Section>
+
+{/* ══════════════════════════════════
+    COURS — c-onco
+══════════════════════════════════ */}
+<Section id="c-onco">
+<Card title="Classification TNM — Q15">
+<table>
+<thead><tr><th>Lettre</th><th>Signification</th><th>Précisions</th></tr></thead>
+<tbody>
+<tr><td><strong>T</strong></td><td>Tumeur primitive</td><td>Taille et extension locale. Le T décrit la tumeur primitive quel que soit l'organe</td></tr>
+<tr><td><strong>N</strong></td><td>Ganglions (Nodes) régionaux</td><td>Présence ou non de métastases ganglionnaires. M = métastases à distance (≠ N = ganglions)</td></tr>
+<tr><td><strong>M</strong></td><td>Métastases à distance</td><td>0 = absence, 1 = présence</td></tr>
+</tbody>
+</table>
+<AlertBox type="info">La classification TNM a une valeur pronostique (B ✓) et est obtenue à partir de données cliniques ET paracliniques. Q15 → AB.</AlertBox>
+</Card>
+
+<Card title="Chirurgie oncologique — Q16">
+<table>
+<thead><tr><th>Principe</th><th>Détail</th></tr></thead>
+<tbody>
+<tr><td>Préservation d'organe</td><td>Objectif prioritaire dès que possible (D ✓)</td></tr>
+<tr><td>Chirurgie néoadjuvante</td><td>Peut précéder une radiothérapie adjuvante pour réduire le risque de rechute locale (B ✓)</td></tr>
+<tr><td>Chirurgie palliative</td><td>Peut soulager : ex. prothèse totale de hanche pour métastase osseuse (C ✓)</td></tr>
+<tr><td>Chirurgie de réduction du risque</td><td>Existe (mastectomie prophylactique BRCA) → A FAUX</td></tr>
+</tbody>
+</table>
+<AlertBox type="ok">Q16 → BCD</AlertBox>
+</Card>
+
+<Card title="Cancer du sein — Curage axillaire (Q4 → ABE)">
+<Grid2>
+<div>
+<Badge color="blue">Repères anatomiques du curage</Badge>
+
+- Sup : **veine axillaire** (A ✓)
+- Inf : **nerf dentelé** = nerf thoracique long (E ✓)
+- Profondeur : **pédicule thoraco-dorsal**
+</div>
+<div>
+<Badge color="amber">Complications du curage</Badge>
+
+**Court terme :**
+- Lymphocèle / sérome
+- Dysesthésies face interne du bras (15 premiers jours)
+- Raideur d'épaule
+- Thromboses lymphatiques superficielles
+
+**Long terme :**
+- Hypoesthésies face interne du bras (Q20 ✓)
+- Amyotrophie du bras (A ✓)
+- Lymphœdème membre sup (18-22 mois) (B ✓)
+- Lésion nerf dentelé → scapula alata
+</div>
+</Grid2>
+</Card>
+
+<Card title="Reconstruction mammaire après mastectomie — Q31 → BCE">
+<table>
+<thead><tr><th>Type</th><th>Description</th><th>Annale</th></tr></thead>
+<tbody>
+<tr><td>Lambeau pédiculé de grand dorsal</td><td>Lambeau musculaire pivoté en avant autour de l'épaule</td><td>B ✓</td></tr>
+<tr><td>Lambeau DIEP (abdominal)</td><td>Tissu abdominal — résultat naturel, cicatrice la plus jolie</td><td>C ✓</td></tr>
+<tr><td>Implant prothétique d'expansion</td><td>Expandeur de volume variable (rond)</td><td>E ✓</td></tr>
+<tr><td>Implant prothétique définitif</td><td>Sans expandeur, en 1 temps</td><td>A ✗</td></tr>
+<tr><td>Lipomodelage exclusif</td><td>5-6 anesthésies générales — complément</td><td>D ✗</td></tr>
+</tbody>
+</table>
+</Card>
+
+<Card title="Cancers ORL (tête et cou) — Q28 → ACD">
+- Carcinome épidermoïde = 90% des cancers ORL
+- FdR principaux : tabac + alcool + milieux socio-économiques défavorisés
+- Oropharynx : cas particulier lié au HPV (Human Papillomavirus)
+- Problématique essentiellement **loco-régionale**
+- A ✓ — Nécessitent une PEC systématique troubles déglutition et parole
+- C ✓ — Peuvent être favorisés par infections virales chroniques = HPV
+- D ✓ — Associés à une 2e localisation au niveau des VADS
+- B FAUX : ils sont + fréquents chez l'homme
+</Card>
+
+<Card title="Séquelles fonctionnelles cancers tête et cou — Q14 → BCD">
+- B ✓ — Nécessitent coopération entre kiné, orthophonistes et diététiciens
+- C ✓ — Peuvent apparaître plusieurs années après la fin du traitement (complications tardives &gt; 20 ans : hypothyroïdie, ostéoradionécrose, sténose carotidienne)
+- D ✓ — Peuvent nécessiter de manière définitive une alimentation entérale exclusive (fausses routes sévères)
+- A FAUX — ne concernent pas exclusivement les voies aéro-digestives
+</Card>
+
+<Card title="Rôle du kinésithérapeute dans les cancers ORL">
+<Grid2>
+<ul>
+<li>Gestion des cicatrices cervicales (assouplissement, prévention adhérences)</li>
+<li>Traitement de l'œdème cervico-facial (drainage lymphatique)</li>
+<li>Rééducation cervicale et scapulaire</li>
+<li>Prévention fibrose et raideur cervicale</li>
+</ul>
+<ul>
+<li>Rééducation respiratoire</li>
+<li>Rééducation déglutition (en lien avec orthophoniste)</li>
+<li>Travail oro-myo-facial (mobilité linguale, motricité labiale)</li>
+</ul>
+</Grid2>
+<AlertBox type="info">3 temps de la déglutition : oral (dentaire) → pharyngé (stimulations sensorielles, protraction linguale, recul basilingual) → œsophagien.</AlertBox>
+</Card>
+
+<Card title="Onco-réhabilitation — Q29 → AD (⚠ piège)">
+<table>
+<thead><tr><th>Proposition</th><th>Vrai/Faux</th><th>Explication</th></tr></thead>
+<tbody>
+<tr><td>A — Le déconditionnement peut arriver dès le diagnostic</td><td><Badge color="green">VRAI</Badge></td><td>Dès l'annonce, anxiété, réduction d'activité → déconditionnement précoce</td></tr>
+<tr><td>B — Fatigue et anxiété peuvent être à l'origine de troubles cognitifs</td><td><Badge color="red">FAUX</Badge></td><td>C'est l'inverse : les troubles cognitifs peuvent être à l'origine de fatigue et anxiété</td></tr>
+<tr><td>C — Il est déconseillé de pratiquer une AP pendant les traitements</td><td><Badge color="red">FAUX</Badge></td><td>L'AP est bénéfique pendant les traitements — améliore la tolérance et le pronostic</td></tr>
+<tr><td>D — Les troubles cognitifs peuvent être à l'origine de fatigue et d'anxiété</td><td><Badge color="green">VRAI</Badge></td><td>Chimiobrain, fatigue liée aux troubles cognitifs → cercle vicieux</td></tr>
+</tbody>
+</table>
+<AlertBox type="trap">Q32 → AD (même logique — B et C sont les propositions inverses, donc FAUSSES).</AlertBox>
+</Card>
+
+<Card title="Neuropathies périphériques chimio-induites — Q41 → ACD">
+- A ✓ — Évaluées grâce au questionnaire RQTH
+- C ✓ — Évaluées tous les mois
+- D ✓ — Évaluées par une équipe pluridisciplinaire
+- B FAUX — évaluées grâce au questionnaire RQTH (pas l'esthésiographie)
+</Card>
+
+<Card title="Chimiothérapie adjuvante — Q39 → A">
+- A ✓ — Elle a pour but de réduire le risque de rechute métastatique
+- B FAUX — Elle est proposée après la chirurgie (adjuvante = après), pas avant (néoadjuvante)
+- C FAUX — Non réservée aux cancers du sein (côlon, prostate, etc.)
+- D FAUX — Proposée après la chirurgie de la tumeur (≠ néoadjuvante)
+</Card>
+</Section>
+
+{/* ══════════════════════════════════
+    COURS — c-palliatif
+══════════════════════════════════ */}
+<Section id="c-palliatif">
+<Card title="Définition des soins palliatifs (SFAP) — Q11, Q40">
+Soins **actifs** dans une approche globale de la personne atteinte d'une maladie grave, évolutive ou terminale.
+
+<AlertBox type="trap">⚠ Soins palliatifs ≠ fin de vie. Ils peuvent démarrer dès le diagnostic d'une maladie grave et être associés à des traitements spécifiques.</AlertBox>
+
+- Soulager les douleurs physiques ET les autres symptômes
+- Prendre en compte la souffrance psychologique, sociale et spirituelle (total pain)
+- Respecter les projets de vie du patient
+- Prennent en charge l'entourage (D ✓)
+- Concernent la qualité de vie du patient (B ✓)
+- Peuvent se réaliser à domicile (A ✓ — Q40)
+
+<Grid2>
+<div><Badge color="red">Obstination déraisonnable</Badge> = ancien acharnement thérapeutique → INTERDIT</div>
+<div><Badge color="red">Euthanasie</Badge> Interdite en France actuellement</div>
+</Grid2>
+</Card>
+
+<Card title="Q11 → BD (avec nuance : E discutée)">
+<table>
+<thead><tr><th>Proposition</th><th>Vrai/Faux</th><th>Explication</th></tr></thead>
+<tbody>
+<tr><td>A — Ne peuvent pas être associés à des traitements spécifiques</td><td><Badge color="red">FAUX</Badge></td><td>Chimiothérapie palliative possible — on peut traiter et être en SP</td></tr>
+<tr><td>B — Concernent la qualité de vie du patient</td><td><Badge color="green">VRAI</Badge></td><td>Objectif central des SP</td></tr>
+<tr><td>C — Ne concernent que les patients en fin de vie</td><td><Badge color="red">FAUX</Badge></td><td>Démarrent dès le diagnostic d'une maladie grave</td></tr>
+<tr><td>D — Prennent en charge l'entourage</td><td><Badge color="green">VRAI</Badge></td><td>Famille et proches inclus dans la PEC palliative</td></tr>
+<tr><td>E — S'adressent à un patient qui ne pourra pas guérir</td><td><Badge color="amber">DISCUTÉ</Badge></td><td>Vrai au sens large mais formulation ambiguë. L'auteur de l'annale considère E VRAI.</td></tr>
+</tbody>
+</table>
+</Card>
+
+<Card title="Souffrance globale — « Total Pain »">
+<Grid2>
+<MiniCard val="🤕" label="Souffrance physique — Douleur, fatigue, troubles fonctionnels" />
+<MiniCard val="😰" label="Souffrance psychologique — Peur de la mort, anxiété, dépression" />
+<MiniCard val="👥" label="Souffrance sociale — Isolement, perte du rôle familial/professionnel" />
+<MiniCard val="🙏" label="Souffrance spirituelle — Recherche du sens, questionnements" />
+</Grid2>
+</Card>
+
+<Card title="Structures de soins palliatifs">
+<table>
+<thead><tr><th>Structure</th><th>Rôle</th></tr></thead>
+<tbody>
+<tr><td>Réseau de soins palliatifs</td><td>À domicile — coordination des acteurs</td></tr>
+<tr><td>EMSP (Équipes Mobiles de Soins Palliatifs)</td><td>Se déplacent dans les services — expertise, conseils thérapeutiques, aide décision éthique</td></tr>
+<tr><td>Lits identifiés de soins palliatifs</td><td>Au sein d'un service d'hospitalisation — dotation supplémentaire en personnel</td></tr>
+<tr><td>USP (Unités de Soins Palliatifs)</td><td>Services spécialisés — prises en charge palliatives complexes uniquement</td></tr>
+</tbody>
+</table>
+</Card>
+
+<Card title="Soins Oncologiques de Support (SOS) — Définition & Composition">
+Plan cancer 2005 — Soins et soutiens nécessaires tout au long de la maladie, conjointement aux traitements spécifiques.
+
+<AlertBox type="trap">Les SOS ne sont PAS une nouvelle spécialité médicale — c'est une organisation coordonnée de différentes compétences.</AlertBox>
+
+**6 thématiques obligatoires (DISSPO) :**
+<Grid3>
+<MiniCard val="🧠" label="Soutien psychologique" />
+<MiniCard val="🤝" label="Accompagnement social" />
+<MiniCard val="💊" label="Lutte contre la douleur" />
+<MiniCard val="🥗" label="Nutrition" />
+<MiniCard val="🏃" label="Réadaptation fonctionnelle" />
+<MiniCard val="🕊️" label="Soins palliatifs" />
+</Grid3>
+</Card>
+
+<Card title="Interdisciplinarité en soins palliatifs — Q23 → ACE">
+- A ✓ — Elle est un concept indispensable dans les soins palliatifs
+- C ✓ — Elle permet d'évaluer le patient dans sa globalité
+- E ✓ — Elle nécessite de s'écouter, en équipe
+- B FAUX — Elle ne permet pas de "prendre une pause dans son travail"
+- D FAUX — Elle apporte une plus-value dans la PEC des patients
+</Card>
+
+<Card title="Soins palliatifs Q40 → ABC">
+- A ✓ — Peuvent se réaliser à domicile
+- B ✓ — Permettent de prendre en charge les symptômes inconfortables
+- C ✓ — Prennent en charge la souffrance
+- D FAUX — Ne favorisent PAS l'obstination déraisonnable (ils s'y opposent)
+- E FAUX — Ne permettent pas de réaliser un suicide assisté (interdit en France)
+</Card>
+
+<Card title="Activité physique adaptée (APA) en oncologie">
+- Prévention et correction du déconditionnement physique
+- Lutte contre la fatigue et la sarcopénie
+- Amélioration de la tolérance des traitements et de leurs effets secondaires
+- Amélioration des douleurs
+- Amélioration du pronostic pour : cancer du sein, cancer du côlon, cancer de la prostate
+
+<AlertBox type="ok">L'APA est **recommandée pendant** les traitements — C'est un piège fréquent en QCM (C FAUX dans Q29/Q32).</AlertBox>
+</Card>
+</Section>
+
+{/* ══════════════════════════════════
+    COURS — c-douleur
+══════════════════════════════════ */}
+<Section id="c-douleur">
+<Card title="Épidémiologie">
+<Grid2>
+<MiniCard val="53%" label="de douleur chez patients ambulatoires onco-hémato (INCa 2010)" />
+<MiniCard val="62%" label="des patients en cancer avancé semblent sous-traités" />
+<MiniCard val="55%" label="douloureux pendant le traitement" />
+<MiniCard val="66%" label="douloureux à un stade avancé / métastatique / terminal" />
+</Grid2>
+<AlertBox type="danger">⅔ des patients en situation avancée semblent sous-traités. Prendre en charge la douleur est une **obligation médico-légale** (loi 4 mars 2002).</AlertBox>
+</Card>
+
+<Card title="Caractéristiques temporelles de la douleur">
+<table>
+<thead><tr><th>Type</th><th>Durée</th><th>Particularité</th></tr></thead>
+<tbody>
+<tr><td><strong>Aiguë</strong></td><td>&lt; 3 mois</td><td>Valeur de signal d'alarme</td></tr>
+<tr><td><strong>Chronique</strong></td><td>≥ 3 mois</td><td>Perte de la finalité d'alarme — détérioration fonctionnelle et relationnelle</td></tr>
+</tbody>
+</table>
+<Grid3>
+<MiniCard val="~" label="Continue — Fond constant" />
+<MiniCard val="⚡" label="Paroxystique — Par pics, facteurs déclenchants à identifier" />
+<MiniCard val="🩺" label="Procédurale — Lors des soins, anticipation +++" />
+</Grid3>
+</Card>
+
+<Card title="3 types de douleur cancéreuse">
+<table>
+<thead><tr><th>Type</th><th>Mécanisme</th><th>Évaluation</th></tr></thead>
+<tbody>
+<tr><td><strong>Nociceptive</strong></td><td>Stimulation persistante des nocicepteurs périphériques</td><td>Clinique</td></tr>
+<tr><td><strong>Neuropathique</strong></td><td>Lésion ou maladie du système somato-sensoriel</td><td>DN4 (si négatif n'exclut pas la douleur neuropathique)</td></tr>
+<tr><td><strong>Dysfonctionnelle (nociplastique)</strong></td><td>Dysfonctionnement des systèmes de contrôle — sans lésion identifiée</td><td>Fibromyalgie, côlon irritable</td></tr>
+</tbody>
+</table>
+<AlertBox type="ok">Les douleurs cancéreuses sont **mixtes** (nociceptive + neuropathique) dans la majorité des cas → traitement multimodal indispensable.</AlertBox>
+</Card>
+
+<Card title="Évaluation de l'intensité — Échelles">
+<table>
+<thead><tr><th>Échelle</th><th>Type</th><th>Indication</th></tr></thead>
+<tbody>
+<tr><td><strong>EVA</strong> (Visuelle Analogique)</td><td>Auto-évaluation</td><td>Gold standard. Face SANS chiffre montrée au patient</td></tr>
+<tr><td><strong>EN</strong> (Numérique 0-10)</td><td>Auto-évaluation</td><td>La plus utilisée en pratique</td></tr>
+<tr><td><strong>EVS</strong> (Verbale Simple)</td><td>Auto-évaluation</td><td>Si barrière du langage — mêmes termes toujours</td></tr>
+<tr><td><strong>ALGOPLUS</strong></td><td>Hétéro-évaluation</td><td>Gériatrie / non-communicants. Positive à partir de 2/5</td></tr>
+<tr><td><strong>DOLOPLUS</strong></td><td>Hétéro-évaluation</td><td>Douleur chez PA avec troubles cognitifs — Q19 → BDE</td></tr>
+</tbody>
+</table>
+<AlertBox type="info">Règle d'or : 1 même échelle pour 1 même patient tout au long du suivi. C'est la **variation** qui compte.</AlertBox>
+</Card>
+
+<Card title="Doloplus — Q19 → BDE">
+- B ✓ — Hétéro-évaluation de la douleur
+- D ✓ — Évaluation de la douleur chez la PA avec troubles cognitifs
+- E ✓ — Évaluation comportementale adaptée (non verbale)
+- A FAUX — ne localise pas la douleur
+- C FAUX — n'analyse pas le mécanisme douloureux
+</Card>
+
+<Card title="Douleur procédurale — point clé kiné">
+- Déclenchée par : mobilisation / verticalisation / défécation / prises alimentaires / soins
+- Nécessite identification préalable des soins potentiellement douloureux
+- Mise en place de protocoles préventifs — **Anticipation +++**
+- Risque de perte d'alliance thérapeutique si douleur non anticipée
+
+<AlertBox type="trap">Toute modification du tableau douloureux (intensité, type, topographie) = signal d'alerte à signaler.</AlertBox>
+</Card>
+
+<Card title="Traitements non médicamenteux de la douleur">
+<Grid3>
+<MiniCard val="🌀" label="Hypnose" />
+<MiniCard val="🧘" label="Sophrologie" />
+<MiniCard val="⚡" label="TENS (électrostimulation transcutanée)" />
+</Grid3>
+<AlertBox type="info">La morphine n'est pas le seul traitement ! Traitement à visée neuropathique, anti-inflammatoire, patchs locaux, techniques interventionnelles de recours spécialisées.</AlertBox>
+</Card>
+</Section>
+
+{/* ══════════════════════════════════
+    FLASHCARDS — UE18
+══════════════════════════════════ */}
+<Section id="flashcards">
+
+<FlashCard theme="Chutes & Équilibre" ctx="Vous évaluez une PA de 78 ans qui a chuté 2 fois en 3 mois." q="Quels sont les 3 tests cliniques de 1re intention recommandés pour identifier le risque de chute ?">
+Station unipodale (A) + TUG / Timed Up & Go (B) + Test de Tinetti (C). ⚠ Ni la marche en parlant, ni le FTSST ne font partie des 3 tests recommandés en 1re ligne.
+</FlashCard>
+
+<FlashCard theme="Chutes & Équilibre" ctx="TUG = 15 secondes." q="Ce résultat est-il pathologique ? Que décidez-vous ?">
+Oui — seuil d'alerte = &gt; 12 secondes. Orienter vers bilan chute complet + prescription kiné ciblée équilibre/marche.
+</FlashCard>
+
+<FlashCard theme="Chutes & Équilibre" q="Citez les 3 afférences sensorielles impliquées dans l'équilibre et la posture.">
+1. Visuel (flux optique, verticalité) — 2. Vestibulaire (accélérations, canaux semi-circulaires) — 3. Proprioceptif (récepteurs plantaires, fuseaux neuromusculaires).
+</FlashCard>
+
+<FlashCard theme="Chutes & Équilibre" q="Quels sont les exercices conseillés dans la prescription kiné HAS pour PA avec troubles de la marche/équilibre ?">
+1. Correction rétropulsion — 2. Travail vestibulaire et repérage dans l'espace — 3. Proprioception récepteurs plantaires — 4. Marche rapide et passage d'obstacles — 5. Entretien articulaire + relevé de sol si possible.
+</FlashCard>
+
+<FlashCard theme="Chutes & Équilibre" q="Vitesse de marche &lt; 1 m/s chez une PA → que signifie ce seuil ?">
+Risque élevé de chute. Indicateur clé de mobilité/équilibre. À évaluer systématiquement avec TUG et Tinetti.
+</FlashCard>
+
+<FlashCard theme="Désadaptation psychomotrice" ctx="Patient âgé hospitalisé 10 jours, grabataire, rétropulsion massive." q="Quel syndrome ? Quelle forme ? Quel bilan ?">
+Syndrome de désadaptation psychomotrice (SDP), forme aiguë post-hospitalisation. Bilan : TMM — score &lt; 6-7 = forte rétropulsion, &lt; 15 = rétropulsion avec adaptation.
+</FlashCard>
+
+<FlashCard theme="Désadaptation psychomotrice" ctx="Le patient pousse contre toute aide lors du passage assis-debout." q="Quel signe clinique ? Quelle contre-indication absolue ?">
+Pushing syndrome (hypertonie d'opposition). JAMAIS de main postérieure (stimule le pushing) et JAMAIS de traction sur les bras.
+</FlashCard>
+
+<FlashCard theme="Désadaptation psychomotrice" q="Forme progressive vs forme aiguë du SDP : comparez le pronostic et les déclencheurs.">
+Forme aiguë : chute/deuil/fécalome/globe, urgence kiné, très bon pronostic. Forme progressive : alitement/contention/hospit., mauvais pronostic car détectée tardivement.
+</FlashCard>
+
+<FlashCard theme="Désadaptation psychomotrice" q="Déambulateur fixe ou rollator ? Lequel privilégier et pourquoi ?">
+Rollator (2 roues puis 4 roues) — il favorise le CG vers l'avant, combat la rétropulsion. Le déambulateur fixe impose une translation du poids en arrière.
+</FlashCard>
+
+<FlashCard theme="Désadaptation psychomotrice" q="Décrivez la progression de verticalisation dans le SDP.">
+1. Contact/stimulation sensorielle → 2. Travail assis (antéposition) → 3. Stand-up → 4. Assis-debout répété (min 3×5) → 5. Équilibre debout statique → dynamique → 6. Marche barres → rollator → 7. Relevé du sol.
+</FlashCard>
+
+<FlashCard theme="Dénutrition" ctx="PA 74 ans : perte de 6% du poids en 1 mois, IMC = 20,5." q="Est-il dénutri selon HAS 2021 ? Justifiez.">
+OUI si ≥ 1 critère étiologique associé. Critère phénotypique : perte ≥ 5%/1 mois (ici 6% ✓). IMC 20,5 &lt; 22 = critère phénotypique supplémentaire. Diagnostic confirmé si cause identifiée.
+</FlashCard>
+
+<FlashCard theme="Dénutrition" q="Quelle est la prévalence de la dénutrition à domicile vs à l'hôpital chez la PA ?">
+Domicile : 4-10%. Institution : 15-38%. Hôpital : 30-70%. Q25 → ABCE.
+</FlashCard>
+
+<FlashCard theme="Dénutrition" q="Citez les seuils de perte de poids devant alerter chez la PA.">
+≥ 5% en 1 mois (A ✓) OU ≥ 10% en 6 mois (D ✓). Attention : 5% en 1 an n'est PAS un seuil d'alerte (E faux).
+</FlashCard>
+
+<FlashCard theme="Dénutrition" q="IMC &lt; 22 chez une PA de 75 ans — que concluez-vous ? Et pour un IMC normal ?">
+IMC &lt; 22 = risque de dénutrition (seuil spécifique PA). MAIS un IMC normal n'exclut pas la dénutrition : on peut être obèse ET sarcopénique ET dénutri.
+</FlashCard>
+
+<FlashCard theme="Dénutrition" q="MNA : qu'enregistre-t-il et en combien de catégories classe-t-il ?">
+Enregistre : poids, taille, IMC, circonférence bras et mollets (+ mobilité, autonomie, situation de vie). Classe en 3 catégories : état normal / risque malnutrition / mauvais état. Q2 → AE.
+</FlashCard>
+
+<FlashCard theme="Dénutrition" q="Quel est le 1er facteur de risque de perte d'années de vie en bonne santé parmi nutrition, tabac, alcool ?">
+La nutrition (31%), devant le tabac (12%) et l'alcool (7%). Q18 → B.
+</FlashCard>
+
+<FlashCard theme="Dénutrition" q="Programme ICOPE : citez les 6 domaines et les 5 étapes.">
+6 domaines : Cognition, Mobilité, Nutrition/Vitalité, Audition, Vision, Psychologie. 5 étapes (D) : Repérage / Évaluation / Plan de soin personnalisé / Suivi parcours de soin / Implication collaborateurs et aidants.
+</FlashCard>
+
+<FlashCard theme="Cognitif / Alzheimer" ctx="Patiente 81 ans, MMSE = 22/30, oublis de faits récents." q="Ce MMSE suffit-il à diagnostiquer Alzheimer ? Quels sont les 3 piliers du diagnostic ?">
+NON. Le MMSE seul ne suffit pas. 3 piliers : 1. IRM cérébrale (ou scanner) — 2. Histoire cognitive — 3. Bilan neuropsychologique.
+</FlashCard>
+
+<FlashCard theme="Cognitif / Alzheimer" q="Alzheimer touche quelle mémoire en premier — antérograde ou rétrograde ?">
+Mémoire antérograde (acquisition de nouveaux souvenirs, faits récents). La mémoire rétrograde est longtemps préservée. Q9-C est FAUX.
+</FlashCard>
+
+<FlashCard theme="Cognitif / Alzheimer" q="Quelles sont les 3 composantes altérées dans les troubles cognitifs de la PA ?">
+B — Composante émotivo-affective / C — Composante cognitive / D — Composante comportementale. (A réglementaire et E sensori-discriminative ne font PAS partie des 3).
+</FlashCard>
+
+<FlashCard theme="Cognitif / Alzheimer" q="Quelle complication nutritionnelle est spécifique à Alzheimer et pourquoi ?">
+La dénutrition : oubli de s'alimenter, apraxie idéomotrice (ne sait plus utiliser les couverts), troubles de la déglutition à un stade avancé.
+</FlashCard>
+
+<FlashCard theme="Dépendance / ADL" q="ADL vs IADL : quelle différence ? Laquelle évalue la gestion des médicaments ?">
+ADL (Katz) : activités basiques (toilette, habillage, alimentation, continence, déplacement). IADL (Lawton) : activités instrumentales dont gestion médicaments, finances, téléphone, courses. Q12-D est FAUX : c'est l'IADL, pas l'ADL.
+</FlashCard>
+
+<FlashCard theme="Dépendance / ADL" q="Score ADL : sur combien de points ? Que signifie le score maximum ?">
+Sur 6 points (6/6 = totalement autonome). Validée à l'échelle internationale. Prédictive de morbi-mortalité. Q12 → ABE.
+</FlashCard>
+
+<FlashCard theme="Dépendance / ADL" ctx="PA hospitalisée 8 jours, devient dépendante pour des actes qu'elle réalisait seule." q="Quel concept ? Comment le prévenir ?">
+Dépendance iatrogène. Prévention : mobilisation précoce (A ✓), pas d'alitement inutile, éviter sondes et contentions (D faux), stimulation cognitive et physique pendant l'hospit. Q24 → ABE.
+</FlashCard>
+
+<FlashCard theme="Dépendance / ADL" q="Quels signes doivent faire suspecter une perte d'indépendance fonctionnelle récente ?">
+Hospitalisation récente (A) + aide technique à la marche récente (B) + mise en place d'aides à domicile récente (E). ⚠ Troubles marche anciens séquellaires (C) = état stable, non retenu.
+</FlashCard>
+
+<FlashCard theme="Pied PA" q="Citez 4 modifications cutanées du pied liées au vieillissement et leurs conséquences.">
+1. Affinement peau → fragilité. 2. ↓ élasticité (↓ collagène) → sécheresse. 3. ↓ sébum → sécheresse cutanée. 4. Fonte capiton plantaire → hyperkératose + douleurs marche + ↑ risque plaies. Q6 → A.
+</FlashCard>
+
+<FlashCard theme="Pied PA" ctx="PA avec ongle épaissi, jauni, douloureux à la coupe." q="Quel dispositif podologique de correction des déformations unguéales ?">
+Les orthonyxies (A) — agrafes ou lames qui redressent progressivement la courbure de l'ongle. Les orthoplasties (B) concernent les déformations des orteils (griffes, chevauchements), pas des ongles.
+</FlashCard>
+
+<FlashCard theme="Pied PA" q="Quels sont les 3 facteurs de risque d'infection du pied chez la PA ?">
+A — Diabète (neuropathie, ulcérations) / B — ↓ circulation sanguine (maladies vasculaires → retard cicatrisation) / C — ↓ immunité (physiologique avec l'âge). L'immunité augmente = FAUX.
+</FlashCard>
+
+<FlashCard theme="Incontinence urinaire" ctx="PA 82 ans : urgences mictionnelles, fuites dès qu'il entend couler l'eau, pollakiurie diurne et nocturne." q="Quel type d'incontinence ?">
+Incontinence par instabilité vésicale (+ fréquente chez la PA). 3 signes : fuites urinaires + impériosités mictionnelles + pollakiurie.
+</FlashCard>
+
+<FlashCard theme="Incontinence urinaire" ctx="Femme 75 ans : fuites de quelques gouttes à la toux et au rire, aucune fuite nocturne." q="Quel type d'incontinence ? Quel traitement kiné ?">
+Incontinence d'effort (insuffisance sphinctérienne). Kiné : méthode Kegel (contractions périnéales actives) + biofeedback + électrostimulation 50-200 Hz + conseils hygiène de vie.
+</FlashCard>
+
+<FlashCard theme="Incontinence urinaire" q="Citez l'acronyme DIAPPERS — causes d'IU transitoire à éliminer en premier.">
+D-Delirium / I-Infections urinaires / A-cArence hormonale / P-causes Psychologiques / P-Poly-médication / E-Excès diurèse / R-Restriction mobilité / S-Selles (constipation).
+</FlashCard>
+
+</Section>
+
+{/* ══════════════════════════════════
+    QCM — UE18
+══════════════════════════════════ */}
+<Section id="qcm">
+
+<QcmCard n={1} type="QCM" tag="Chutes" ctx="Patiente 78 ans, TUG à 14 sec, 2 chutes en 4 mois, canne." q="Quels éléments alertent sur un risque de chute élevé ?" opts={["A — TUG > 12 secondes","B — Utilisation d'une canne (aide technique récente)","C — Raideur matinale des genoux","D — Âge de 78 ans à lui seul","E — Antécédent de 2 chutes en 4 mois"]} ans={[0,1,4]}>
+**A ✓** TUG > 12s = seuil risque élevé. **B ✓** aide technique récente = signe perte d'indépendance (Q26). **E ✓** 2 chutes = critère risque élevé. C = arthrose isolée non suffisante. D = l'âge seul ne conclut pas.
+</QcmCard>
+
+<QcmCard n={2} type="QCM" tag="Chutes" q="Dans la prescription kiné HAS pour troubles de la marche/équilibre chez la PA, quels exercices sont recommandés ?" opts={["A — Renforcement quadriceps en chaîne ouverte uniquement","B — Correction de la rétropulsion","C — Travail vestibulaire et repérage dans l'espace","D — Proprioception avec stimulation des récepteurs plantaires","E — Marche rapide et passage d'obstacles"]} ans={[1,2,3,4]}>
+**B C D E ✓** = les 4 éléments prescrits (+ entretien articulaire et relevé de sol si possible). A ✗ = renforcement en CO uniquement non recommandé dans la prescription équilibre.
+</QcmCard>
+
+<QcmCard n={3} type="QCM" tag="Désadaptation" ctx="M. André, 84 ans, hospitalisé après chute, grabataire J3, rétropulsion massive, pousse contre toute aide." q="Concernant la prise en charge de ce patient, cochez la ou les réponses exactes." opts={["A — Laisser reposer au lit pour éviter un nouvel incident","B — Utiliser le stand-up plutôt que la table de verticalisation","C — Placer les mains dans le dos du patient pour corriger la rétropulsion","D — Proposer un rollator 2 ou 4 roues plutôt qu'un déambulateur fixe","E — Réaliser une stimulation plantaire en position assise"]} ans={[1,3,4]}>
+**B ✓** Stand-up évite la stimulation dorsale qui aggrave le pushing. **D ✓** Rollator favorise CG vers l'avant. **E ✓** Stimulation plantaire = proprioception, lutte contre rétropulsion. A ✗ JAMAIS mettre au lit directement. C ✗ JAMAIS de main postérieure → aggrave le pushing syndrome.
+</QcmCard>
+
+<QcmCard n={4} type="QCS" tag="Désadaptation" q="Concernant le TMM dans le SDP, quel score traduit une forte rétropulsion ?" opts={["A — Score < 15/20","B — Score < 10/20","C — Score < 6-7/20","D — Score < 3/20","E — Tout score < 20/20"]} ans={[2]}>
+**C ✓** Score &lt; 6-7 = forte rétropulsion (urgence kiné). Score &lt; 15 = rétropulsion avec adaptation résiduelle.
+</QcmCard>
+
+<QcmCard n={5} type="QCM" tag="Dénutrition" ctx="Mme D., 76 ans, pesait 62 kg il y a 6 mois, pèse 55 kg aujourd'hui. IMC = 21,3. Mange peu depuis une pneumonie." q="Concernant cet état nutritionnel, cochez la ou les réponses exactes." opts={["A — Elle est dénutrie selon les critères HAS 2021","B — Son IMC normal exclut la dénutrition","C — La perte de poids constitue un critère phénotypique","D — La pneumonie constitue un critère étiologique","E — L'IMC < 22 constitue un critère phénotypique indépendant"]} ans={[0,2,3,4]}>
+**A ✓** Perte 11,3% en 6 mois > 10% (critère phénotypique) + pneumonie (critère étiologique) → dénutrition HAS 2021. **C ✓ D ✓**. **E ✓** IMC 21,3 &lt; 22 = critère phénotypique PA. B ✗ FAUX — IMC normal n'exclut jamais la dénutrition.
+</QcmCard>
+
+<QcmCard n={6} type="QCS" tag="Dénutrition" q="Quel est le seuil d'IMC retenu comme critère phénotypique de dénutrition chez la PA ≥ 70 ans (HAS 2021) ?" opts={["A — IMC < 18,5 kg/m²","B — IMC < 20 kg/m²","C — IMC < 21 kg/m²","D — IMC < 22 kg/m²","E — IMC < 25 kg/m²"]} ans={[3]}>
+**D ✓** IMC &lt; 22 = seuil spécifique PA ≥ 70 ans (HAS 2021). Chez l'adulte jeune = &lt; 18,5. Piège récurrent en annale !
+</QcmCard>
+
+<QcmCard n={7} type="QCM" tag="Dénutrition" q="Concernant le MNA, cochez la ou les réponses exactes." opts={["A — Il enregistre le poids, la taille, l'IMC, la circonférence des bras et mollets","B — Il mesure uniquement l'état nutritionnel biologique","C — Il ne mesure pas la mobilité ni l'autonomie","D — Il classe les individus en 3 catégories nutritionnelles","E — Il évalue aussi la situation de vie et la mobilité"]} ans={[0,3,4]}>
+**A ✓ D ✓ E ✓**. Le MNA est un outil global qui intègre mobilité, autonomie et situation de vie. B ✗ et C ✗ = propositions fausses. Réponse annale Q2 = AE.
+</QcmCard>
+
+<QcmCard n={8} type="QCM" tag="Cognitif" q="Dans la maladie d'Alzheimer, cochez la ou les réponses exactes." opts={["A — L'évaluation psychométrique de 1re ligne comprend un MMSE","B — Il n'y a pas d'intérêt à faire le diagnostic précoce","C — Il s'agit d'un trouble de la mémoire rétrograde principalement","D — Une IRM cérébrale peut montrer une atrophie temporale interne","E — La dénutrition fait partie des complications de la pathologie"]} ans={[0,3,4]}>
+**A ✓ D ✓ E ✓**. B ✗ Le diagnostic précoce améliore la prise en charge. C ✗ Alzheimer touche la mémoire antérograde (faits récents), pas rétrograde. Q9 → ADE.
+</QcmCard>
+
+<QcmCard n={9} type="QCS" tag="Cognitif" q="Un MMSE < 25/30 permet seul de poser le diagnostic de maladie d'Alzheimer." opts={["A — Vrai","B — Faux"]} ans={[1]}>
+**B FAUX**. Le MMSE est un outil de dépistage, pas de diagnostic. Le diagnostic nécessite 3 piliers : histoire cognitive + IRM cérébrale + bilan neuropsychologique. Q35 → B.
+</QcmCard>
+
+<QcmCard n={10} type="QCM" tag="Dépendance" q="Concernant l'échelle ADL en gériatrie, cochez la ou les réponses exactes." opts={["A — Elle est cotée sur 6, le maximum étant 6/6","B — Elle est validée à l'échelle internationale","C — Elle évalue la gestion administrative et des traitements","D — Elle évalue les activités instrumentales de la vie quotidienne","E — Elle est prédictive de morbi-mortalité"]} ans={[0,1,4]}>
+**A ✓ B ✓ E ✓**. C ✗ et D ✗ = c'est l'IADL (Lawton) qui évalue les activités instrumentales. Piège classique Q12 → réponse ABE.
+</QcmCard>
+
+<QcmCard n={11} type="QCM" tag="Dépendance" q="Concernant la dépendance iatrogène chez la PA, cochez la ou les réponses exactes." opts={["A — Il faut mobiliser précocement et rapidement quand c'est possible","B — Elle est liée à l'hospitalisation","C — Pour éviter les chutes, le patient doit rester au lit pendant la phase aiguë","D — Une sonde urinaire est systématique pour éviter les déplacements seul","E — Il s'agit d'une dépendance potentiellement évitable"]} ans={[0,1,4]}>
+**A ✓ B ✓ E ✓**. C ✗ JAMAIS laisser au lit sans raison médicale → aggrave la dépendance. D ✗ Sonde urinaire = source d'infections et perte d'autonomie, à éviter. Q24 → ABE.
+</QcmCard>
+
+<QcmCard n={12} type="QCS" tag="Pied" q="Quel dispositif podologique est utilisé pour corriger les déformations des ongles chez la PA ?" opts={["A — Les orthonyxies","B — Les orthoplasties","C — Les semelles orthopédiques","D — Les chaussures thérapeutiques","E — Les orthèses plantaires"]} ans={[0]}>
+**A ✓** Les orthonyxies = dispositifs de correction de la courbure unguéale (agrafes, lames). Les orthoplasties (B) corrigent les déformations des orteils. Q36 → A.
+</QcmCard>
+
+<QcmCard n={13} type="QCM" tag="Pied" q="Quelles sont les modifications physiologiques du vieillissement cutané du pied ?" opts={["A — Fonte du capiton plantaire (↓ graisse plantaire)","B — Augmentation de l'épaisseur du derme","C — Diminution de la production de sébum","D — Augmentation de l'élasticité par dépôts calciques","E — Affinement de la peau (derme + épiderme plus minces)"]} ans={[0,2,4]}>
+**A ✓ C ✓ E ✓**. Conséquences de A : hyperkératose, douleurs, risque plaies. B ✗ le derme s'amincit. D ✗ l'élasticité diminue (↓ collagène et élastine).
+</QcmCard>
+
+<QcmCard n={14} type="QCM" tag="Incontinence" ctx="M. P., 79 ans : fuites dès qu'il entend couler l'eau, besoin urgent toutes les heures, délai de rétention très court, fuites abondantes." q="Concernant ce tableau clinique, cochez la ou les réponses exactes." opts={["A — Il s'agit d'une incontinence par insuffisance sphinctérienne","B — C'est l'incontinence la plus fréquente chez la PA","C — Les fuites surviennent uniquement à l'effort","D — La rééducation repose sur les contractions périnéales pour retarder les mictions","E — Le tableau correspond à une instabilité vésicale"]} ans={[1,3,4]}>
+**B ✓** Instabilité vésicale = + fréquente chez la PA. **D ✓** Contractions périnéales pour retarder les mictions. **E ✓** Urgences + pollakiurie + fuites abondantes = instabilité vésicale. A ✗ Insuffisance sphinctérienne = fuites à l'effort, peu abondantes. C ✗ les fuites se produisent jour ET nuit.
+</QcmCard>
+
+<QcmCard n={15} type="QCM" tag="Incontinence" q="Dans le traitement de l'incontinence d'effort de la femme âgée, quelles méthodes de rééducation ?" opts={["A — Méthode Kegel","B — Biofeedback","C — Électrostimulation à 50-200 Hz","D — Cystomanométrie","E — Hygiène de vie et conseils quotidiens"]} ans={[0,1,2,4]}>
+**A ✓** Kegel = méthode active. **B ✓** Biofeedback = méthode active. **C ✓** Électrostimulation 50-200 Hz = méthode passive. **E ✓** conseils hygiène de vie. D ✗ Cystomanométrie = examen diagnostique, pas une méthode de rééducation.
+</QcmCard>
+
+<QcmCard n={16} type="QCM" tag="Oncologie" q="Au sujet de la classification TNM des cancers, cochez la ou les réponses exactes." opts={["A — Le T correspond à la taille de la tumeur mammaire primitive uniquement","B — Elle a une valeur pronostique","C — Elle est obtenue à partir de données cliniques uniquement","D — Le M correspond au nombre de ganglions de proximité qui sont métastatiques","E — Elle est utilisée pour tous les types de cancers solides"]} ans={[1,4]}>
+**B ✓** La TNM a une valeur pronostique reconnue. **E ✓** Applicable à tous les cancers solides. A ✗ Le T décrit la tumeur primitive de tout cancer, pas uniquement le sein. C ✗ Elle intègre données cliniques ET paracliniques. D ✗ Le M = métastases à distance (les ganglions = N). Q15 → AB.
+</QcmCard>
+
+<QcmCard n={17} type="QCM" tag="Oncologie" q="Concernant la chirurgie des cancers, cochez la ou les réponses exactes." opts={["A — Il n'existe pas de chirurgie de réduction du risque d'un cancer","B — Elle peut précéder une radiothérapie adjuvante pour diminuer le risque de rechute locale","C — Elle peut être palliative (ex : prothèse totale de hanche pour métastase osseuse)","D — Elle doit autant que possible préserver l'organe"]} ans={[1,2,3]}>
+**B ✓** Chirurgie puis radiothérapie adjuvante = standard fréquent. **C ✓** Chirurgie palliative antalgique = indiquée pour soulager douleurs osseuses métastatiques. **D ✓** Chirurgie conservatrice = objectif prioritaire. A ✗ FAUX — la mastectomie prophylactique (BRCA) existe bien. Q16 → BCD.
+</QcmCard>
+
+<QcmCard n={18} type="QCM" tag="Oncologie" ctx="Patiente opérée d'un cancer du sein avec curage axillaire, gonflement du bras droit 20 mois après." q="Quelle(s) complication(s) spécifique(s) à long terme du curage axillaire ?" opts={["A — Amyotrophie du bras","B — Lymphœdème du membre supérieur","C — Hypoesthésie de la face interne du bras","D — Syndrome du canal carpien","E — Scapula alta"]} ans={[0,1,2]}>
+**A ✓** Amyotrophie du bras = lésion pédicule thoraco-dorsal. **B ✓** Lymphœdème = complication majeure long terme (18-22 mois). **C ✓** Hypoesthésie face interne du bras = long terme. D ✗ Non spécifique au curage. E ✗ Non listé comme complication du curage. Q20 → ABC.
+</QcmCard>
+
+<QcmCard n={19} type="QCM" tag="Oncologie" q="Quels sont les principaux types de reconstruction mammaire après mastectomie ?" opts={["A — L'implant prothétique définitif","B — Le lambeau pédiculé de grand dorsal","C — Le lambeau de DIEP (abdominal)","D — Le lipomodelage exclusif","E — L'implant prothétique d'expansion"]} ans={[1,2,4]}>
+**B ✓** Grand dorsal = lambeau musculaire pédiculé pivoté en avant. **C ✓** DIEP = lambeau abdominal, résultat naturel. **E ✓** Implant d'expansion = prothèse à volume variable. A ✗ Non listé comme 'principal type'. D ✗ Lipomodelage seul = complément. Q31 → BCE.
+</QcmCard>
+
+<QcmCard n={20} type="QCM" tag="Oncologie" q="Concernant les cancers de la tête et du cou (ORL), cochez la ou les réponses exactes." opts={["A — Ils nécessitent une prise en soin systématique pour les troubles de la déglutition et de la parole","B — Ils sont les plus fréquents chez l'homme après le cancer de la prostate","C — Ils peuvent être favorisés par des infections virales chroniques","D — Ils sont les cancers les plus fréquemment associés à une seconde localisation au niveau des voies aérodigestives","E — Le carcinome épidermoïde représente moins de 50% des cas"]} ans={[0,2,3]}>
+**A ✓** PEC systématique troubles déglutition/parole. **C ✓** HPV (oropharynx) = infection virale chronique favorisante. **D ✓** 2e localisation VADS fréquente. B ✗ FAUX. E ✗ Carcinome épidermoïde = 90% des cas ORL. Q28 → ACD.
+</QcmCard>
+
+<QcmCard n={21} type="QCM" tag="Oncologie" q="En ce qui concerne les séquelles fonctionnelles des cancers de la tête et du cou, cochez la ou les réponses exactes." opts={["A — Elles concernent exclusivement les fonctions des voies aéro-digestives","B — Elles nécessitent le plus souvent une coopération entre kinésithérapeutes, orthophonistes et diététiciens","C — Elles peuvent apparaître plusieurs années après la fin du traitement","D — Elles peuvent nécessiter de manière définitive une alimentation entérale exclusive"]} ans={[1,2,3]}>
+**B ✓** Coopération pluridisciplinaire obligatoire. **C ✓** Complications tardives jusqu'à 20+ ans. **D ✓** Dysphagie sévère irréversible possible. A ✗ Séquelles aussi sur épaule, mobilité cervicale, respiration. Q14 → BCD.
+</QcmCard>
+
+<QcmCard n={22} type="QCM" tag="Oncologie" q="En oncologie dans le cadre de la réhabilitation, cochez la ou les réponses exactes." opts={["A — Le déconditionnement physique peut arriver dès le diagnostic","B — La fatigue et l'anxiété peuvent être à l'origine de troubles cognitifs","C — Il est déconseillé de pratiquer une activité physique pendant les traitements","D — Les troubles cognitifs peuvent être à l'origine de fatigue et d'anxiété"]} ans={[0,3]}>
+**A ✓** Dès l'annonce, anxiété + réduction d'activité → déconditionnement précoce. **D ✓** Chimiobrain → fatigue et anxiété. B ✗ FAUX — c'est l'inverse. C ✗ FAUX — APA recommandée pendant les traitements. Q29 → AD. Q32 → AD.
+</QcmCard>
+
+<QcmCard n={23} type="QCS" tag="Oncologie" q="Concernant une chimiothérapie adjuvante, cochez la ou les réponses exactes." opts={["A — Elle a pour but de réduire le risque de rechute métastatique","B — Elle a pour but de majorer les chances de guérison","C — Elle est exclusivement réservée aux cancers du sein","D — Elle est proposée avant une chirurgie de la tumeur"]} ans={[0]}>
+**A ✓** Réduction du risque de rechute métastatique = définition de la chimiothérapie adjuvante. B ✗ Trop général. C ✗ Utilisée dans beaucoup de cancers. D ✗ FAUX — adjuvante = APRÈS chirurgie (≠ néoadjuvante = avant). Q39 → A.
+</QcmCard>
+
+<QcmCard n={24} type="QCM" tag="Oncologie" q="Concernant les neuropathies périphériques chimio-induites dans le cadre de l'onco-réhabilitation." opts={["A — Elles sont évaluées grâce au questionnaire RQTH","B — Elles sont évaluées grâce à l'esthésiographie","C — Elles sont évaluées tous les mois","D — Elles sont évaluées par une équipe pluridisciplinaire"]} ans={[0,2,3]}>
+**A ✓** Questionnaire RQTH utilisé pour l'évaluation des NPCI. **C ✓** Évaluation mensuelle recommandée. **D ✓** Évaluation pluridisciplinaire. B ✗ L'esthésiographie n'est pas l'outil de référence ici. Q41 → ACD.
+</QcmCard>
+
+<QcmCard n={25} type="QCM" tag="Palliatif" q="Concernant les soins palliatifs, cochez la ou les réponses exactes." opts={["A — Ils ne peuvent pas être associés à des traitements spécifiques","B — Ils concernent la qualité de vie du patient","C — Ils ne concernent que les patients en fin de vie","D — Ils prennent en charge l'entourage","E — Ils s'adressent à un patient qui ne pourra pas guérir"]} ans={[1,3,4]}>
+**B ✓** Qualité de vie = objectif central. **D ✓** Entourage inclus dans la PEC. **E ✓** (l'auteur de l'annale considère E vrai). A ✗ Chimiothérapie palliative possible. C ✗ Démarrent dès le diagnostic d'une maladie grave. Q11 → BD (BDE selon interprétation).
+</QcmCard>
+
+<QcmCard n={26} type="QCM" tag="Palliatif" q="Concernant les soins palliatifs, cochez la ou les réponses exactes." opts={["A — Ils peuvent se réaliser à domicile","B — Ils permettent de prendre en charge les symptômes inconfortables","C — Ils prennent en charge la souffrance","D — Ils favorisent l'obstination déraisonnable","E — Ils permettent de réaliser un suicide assisté"]} ans={[0,1,2]}>
+**A ✓** Réseau SP à domicile. **B ✓** Prise en charge des symptômes = mission centrale. **C ✓** Souffrance globale (physique, psycho, sociale, spirituelle). D ✗ Les SP s'opposent à l'obstination déraisonnable. E ✗ Suicide assisté interdit en France. Q40 → ABC.
+</QcmCard>
+
+<QcmCard n={27} type="QCM" tag="Palliatif" q="Concernant l'interdisciplinarité dans les soins palliatifs en oncologie." opts={["A — Elle est un concept indispensable dans les soins palliatifs","B — Elle permet de prendre une pause dans son travail","C — Elle permet d'évaluer le patient dans sa globalité","D — Elle n'apporte pas de plus-value dans la prise en charge des patients","E — Elle nécessite de s'écouter, en équipe"]} ans={[0,2,4]}>
+**A ✓** Indispensable — répartit le poids des décisions difficiles. **C ✓** Évaluation globale (physique, psycho, sociale, spirituelle). **E ✓** Écoute et communication en équipe = fondement. B ✗ Non. D ✗ Elle apporte une plus-value majeure. Q23 → ACE.
+</QcmCard>
+
+<QcmCard n={28} type="QCM" tag="Douleur" q="Concernant l'échelle Doloplus, elle permet :" opts={["A — Une localisation de la douleur","B — L'hétéro-évaluation de la douleur","C — Une analyse du mécanisme douloureux","D — Une évaluation comportementale","E — Une évaluation de la douleur chez la PA avec des troubles cognitifs"]} ans={[1,3,4]}>
+**B ✓** Hétéro-évaluation = le soignant observe. **D ✓** Critères comportementaux observables. **E ✓** Conçue pour PA avec troubles cognitifs. A ✗ Ne localise pas. C ✗ N'analyse pas le mécanisme. Q19 → BDE.
+</QcmCard>
+
+<QcmCard n={29} type="QCM" tag="Douleur" ctx="Patient cancéreux, douleur depuis 5 mois, aggravée la nuit, avec des pics lors des soins de pansement." q="Concernant cette douleur, cochez la ou les réponses exactes." opts={["A — Il s'agit d'une douleur aiguë","B — La douleur nocturne suggère une composante anxieuse à prendre en charge","C — Les pics lors des soins correspondent à une douleur procédurale","D — Le DN4 négatif exclut une composante neuropathique","E — Il faut anticiper les soins douloureux avec un protocole préventif"]} ans={[1,2,4]}>
+**B ✓** Douleurs nocturnes = part anxieuse → prendre en charge le versant psychologique. **C ✓** Déclenchée par les soins = douleur procédurale → anticipation. **E ✓** Anticipation +++ = obligation qualité des soins. A ✗ Chronique (≥ 3 mois). D ✗ FAUX — DN4 négatif n'exclut PAS la douleur neuropathique.
+</QcmCard>
+
+<QcmCard n={30} type="QCS" tag="Douleur" q="Parmi ces facteurs (nutrition, tabac, alcool), quel est le premier facteur de risque de perte d'années de vie en bonne santé ?" opts={["A — L'alcool (7%)","B — La nutrition (31%)","C — Le tabac (12%)"]} ans={[1]}>
+**B ✓** La nutrition = 1er facteur (31%), avant tabac (12%) et alcool (7%). Piège classique en annale. Q18 → B.
+</QcmCard>
+
+<QcmCard n={31} type="QCM" tag="Dépendance" q="Parmi les aides pouvant être mises en place à domicile chez une PA, cochez toutes les réponses exactes." opts={["A — Un passage IDE pour l'aide à la toilette et la gestion des traitements","B — Le portage des repas","C — Un passage d'un(e) auxiliaire de vie pour la gestion des repas","D — Des séances de kinésithérapie","E — Des séances d'orthophonie"]} ans={[0,1,2,3,4]}>
+**ABCDE ✓** — Toutes ces aides peuvent être mises en place à domicile pour maintenir l'autonomie maximale. Q21 → ABCDE.
+</QcmCard>
+
+<QcmCard n={32} type="QCM" tag="Dénutrition" q="Concernant la dénutrition chez la personne âgée, cochez la ou les réponses exactes." opts={["A — La surveillance du poids et de la fonction musculaire ne sont pas des éléments principaux de la surveillance","B — La masse grasse peut remplacer la masse musculaire, laissant le poids inchangé","C — Une alimentation insuffisante et moins d'activité physique entraîne une perte de masse musculaire et de force","D — Une alimentation équilibrée à ≥ 1500 kcal/j fournit généralement les vitamines et minéraux nécessaires","E — L'évaluation de l'état nutritionnel doit faire partie de toute évaluation de santé"]} ans={[1,2,3,4]}>
+**B ✓** La masse grasse masque la fonte musculaire (poids stable alors que sarcopénie progresse). **C ✓** Cercle vicieux sédentarité + dénutrition → sarcopénie. **D ✓** 1500 kcal/j minimum pour les vitamines. **E ✓** Évaluation nutritionnelle systématique. A ✗ FAUX — poids et fonction musculaire sont les éléments PRINCIPAUX. Q27 → BCDE.
+</QcmCard>
+
+<QcmCard n={33} type="QCM" tag="Dénutrition" q="Concernant l'IMC chez la personne âgée, cochez la ou les réponses exactes." opts={["A — Un IMC inférieur à 20 kg/m², une perte de poids > 10% en 1 mois et une albuminémie < 30g/L traduit une dénutrition sévère","B — On ne peut pas être à la fois obèse et dénutri","C — Le seuil de dénutrition pour les plus de 70 ans est un IMC inférieur à 22","D — L'IMC est un critère phénotypique dans le diagnostic de dénutrition","E — L'IMC est égal au poids en kg divisé par la taille au carré exprimée en mètres"]} ans={[0,2,3,4]}>
+**A ✓** Dénutrition sévère : IMC &lt; 20 + perte &gt; 10%/1 mois + albuminémie &lt; 30g/L. **C ✓** IMC &lt; 22 = seuil PA ≥ 70 ans (HAS 2021). **D ✓** Critère phénotypique. **E ✓** Formule de l'IMC. B ✗ FAUX — on peut être obèse ET dénutri ET sarcopénique. Q33 → ACDE.
+</QcmCard>
+
+</Section>

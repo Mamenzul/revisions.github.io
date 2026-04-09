@@ -1,0 +1,15 @@
+---
+interface Props {
+  theme: string;
+  ctx?: string;
+  q: string;
+}
+const { theme, ctx, q } = Astro.props;
+---
+<div class="fc-item" data-theme={theme} data-q={q} data-ctx={ctx ?? ''}>
+  <div class="fc-answer"><slot /></div>
+</div>
+
+<style>
+  .fc-item { display: none; }
+</style>

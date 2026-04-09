@@ -1,0 +1,7 @@
+---
+interface Props {
+  level: 'a' | 'b' | 'c';
+}
+const { level } = Astro.props;
+---
+<span class={`grade grade-${level}`}>{level.toUpperCase()}</span>

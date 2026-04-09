@@ -1,0 +1,17 @@
+---
+interface Props {
+  type?: 'trap' | 'key' | 'has' | 'danger' | 'info' | 'ok';
+}
+const { type = 'info' } = Astro.props;
+const classMap: Record<string, string> = {
+  trap: 'alert-trap',
+  key: 'alert-key',
+  has: 'alert-has',
+  danger: 'alert-danger',
+  info: 'alert-info',
+  ok: 'alert-ok',
+};
+---
+<div class={classMap[type]}>
+  <slot />
+</div>

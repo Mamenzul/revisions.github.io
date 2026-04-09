@@ -1,0 +1,7 @@
+---
+interface Props {
+  color?: 'green' | 'red' | 'amber' | 'blue' | 'teal' | 'gray';
+}
+const { color = 'blue' } = Astro.props;
+---
+<span class={`badge badge-${color}`}><slot /></span>
