@@ -1,5 +1,4 @@
 ---
-const base = import.meta.env.BASE_URL;
 import Layout from '../layouts/Layout.astro';
 ---
 <Layout title="Révisions Master IFMK">
@@ -9,13 +8,13 @@ import Layout from '../layouts/Layout.astro';
       <p>Sélectionnez une UE pour commencer</p>
     </div>
     <div class="ue-grid">
-      <a href={`${base}/ue23`} class="ue-card ue-card--23">
+      <a href="/revisions/ue23" class="ue-card ue-card--23">
         <div class="ue-icon">📖</div>
         <div class="ue-label">UE 23</div>
         <div class="ue-name">Gérontologie & PTG</div>
         <div class="ue-desc">Fragilité, chutes, sarcopénie, PTG — Cours, flashcards, QCM</div>
       </a>
-      <a href={`${base}/ue18`} class="ue-card ue-card--18">
+      <a href="/revisions/ue18" class="ue-card ue-card--18">
         <div class="ue-icon">🏥</div>
         <div class="ue-label">UE 18</div>
         <div class="ue-name">Gériatrie — Révisions</div>
